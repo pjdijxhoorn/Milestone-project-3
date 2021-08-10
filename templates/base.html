@@ -25,10 +25,12 @@
 <!--Nav-bar-->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="logo hvr-underline-reveal" href="#">
-                <i class="fas fa-hamburger">
-                </i><span> BBQ with Friends</span>
-            </a>
+            <div class="logo-block">
+                <a class="logo hvr-underline-reveal" href="{{ url_for('index') }}">
+                    <i class="fas fa-hamburger"></i>
+                    <span> BBQ with Friends</span>
+                </a>
+            </div>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -39,13 +41,13 @@
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('about') }}">Recipe's</a>
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('recipe') }}">Recipe's</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('contact') }}">Search</a>
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('search') }}">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('careers') }}">Log in</a>
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('login') }}">Login</a>
                     </li>
                 </ul>
             </div>
@@ -66,14 +68,13 @@
     </div>
 </header>
 
-
+{% block content %}
+{% endblock %}
 
 <footer>
 
 </footer>
 
-
-<!-- Custom scripts for this template -->
 
 </body>
 </html>
