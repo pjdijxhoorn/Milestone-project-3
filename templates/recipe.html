@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>recipe</h1>
+    <h1>recipies</h1>
+    {%for recipe in recipies%}
+        {{recipe.category_name}}<br>
+        {{recipe.Name_dish}}<br>
+        {{recipe.preperation_time}}<br>
+        {{recipe.ingredients}}<br>
+        {{recipe.Other_requirments}}<br>
+        {{recipe.explanation}}<br>
+        {{recipe.Photo}}<br>
+    {% endfor%}
+
 {% endblock %}
+
+
+
+:
