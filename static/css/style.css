@@ -12,6 +12,15 @@ body{
 }
 
 
+/*----------messages*/
+
+.flash{
+    line-height: 2;
+}
+.errorMsg{
+    color: orangered;
+}
+
 /*----------nav-bar*/
 
 .navbar {
@@ -20,7 +29,7 @@ body{
 .nav-item{
     padding-right: 10px;
 }
-/*---------logoblock  duwt de nav li naar rechts*/
+
 .logo-block{
     padding-right: 10px;
 }
@@ -151,6 +160,8 @@ header.masthead .post-heading .meta a {
     background-color: orangered;
     font-size: 30px;
     color: white;
+    margin: 20px;
+
 }
 
 /*----------footer*/

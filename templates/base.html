@@ -107,14 +107,32 @@
     </div>
 </header>
 
+<section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row flashes center">
+                    <h2 class="errorMsg">{{ message }}</h2>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</section>
 
- <script src="static/css/js/navbar.js"></script>
-{% block content %}
-{% endblock %}
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+ 
+
 <footer>
 
 </footer>
 
+<script src="static/css/js/navbar.js"></script>
 
 </body>
 </html>

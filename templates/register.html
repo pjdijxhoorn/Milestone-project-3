@@ -7,24 +7,28 @@
           <!--Email-->
         <div>
           <label for="email" class="form-label">Email address</label>
-          <input type="email" name="email" class="form-control" id="Email" aria-describedby="emailHelp">
+          <input type="email" name="email" class="form-control" id="Email" aria-describedby="emailHelp" >
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <!--Username-->
         <div>
-            <label for="Username" class="form-label">Username</label>
-            <input type="Username" name="Username" class="form-control" id="Username" aria-describedby="Username">
-            <div id="Username" class="form-text">What would you like us to call you.</div>
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" id="username" aria-describedby="Username"
+              minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+            <div class="form-text">What would you like us to call you?</div>
           </div>
           <!--Password-->
         <div>
-          <label for="Password" class="form-label">Password</label>
-          <input type="Password" name="Password" class="form-control" id="Password">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password" 
+            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+          <div class="form-text">Your password should between 5 and 15 characters long and made up of letters and numbers.</div>
         </div>
         <!--Password confirm-->
         <div>
-            <label for="Passwordconfirm" class="form-label">Confirm password</label>
-            <input type="password" name="Passwordconfirm" class="form-control" id="Passwordconfirm">
+            <label for="passwordconfirm" class="form-label">Confirm password</label>
+            <input type="password" name="passwordconfirm" class="form-control" id="passwordconfirm">
+            <div class="form-text">typ your password again to check.</div>
           </div>
         <button type="submit" class="btn submit-btn">Submit</button>
     </div>
