@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>recipies</h1>
-    {%for recipe in recipies%}
-        {{recipe.category_name}}<br>
-        {{recipe.Name_dish}}<br>
-        {{recipe.preperation_time}}<br>
-        {{recipe.ingredients}}<br>
-        {{recipe.Other_requirments}}<br>
-        {{recipe.explanation}}<br>
-        {{recipe.Photo}}<br>
-    {% endfor%}
-
+    <h1 class="text-center">recipies</h1>
+    <div>
+        {%for recipe in recipies%}
+            <div class="col-md-4 list-inline-item recipe-block">
+                genre: {{recipe.category_name}}<br>
+               <h1>{{recipe.Name_dish}}<br></h1> 
+               <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
+               <i class="fas fa-plus-circle"></i>  {{recipe.ingredients}}<br>
+               <i class="fas fa-check-circle"></i>  {{recipe.Other_requirments}}<br>
+                <i class="fas fa-clipboard-list"></i>  {{recipe.explanation}}<br>
+            <img class="recipe-photo" src="{{recipe.Photo}}"> <br>
+            </div>
+        {% endfor%}
+    </div>
 {% endblock %}
 
 
 
-:
+<i class="far fa-clock"></i>

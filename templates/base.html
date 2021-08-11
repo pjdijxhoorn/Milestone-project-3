@@ -23,19 +23,21 @@
 <body>
 
 <!--Nav-bar-->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
+
+</div>
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+        <div class="container col-12">
             <div class="logo-block">
                 <a class="logo hvr-underline-reveal" href="{{ url_for('index') }}">
                     <i class="fas fa-hamburger"></i>
                     <span> BBQ with Friends</span>
                 </a>
             </div>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
+            
+            <button class="navbar-toggler navbar-toggler-right" type="button" id="nav-btn">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('index') }}">Home</a>
@@ -49,9 +51,46 @@
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('login') }}">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('profile') }}">profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('register') }}">register</a>
+                    </li>
                 </ul>
             </div>
         </div>
+        <!--off canvas Nav-bar-->
+        <div id="navMenu" class="col-12">
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('recipe') }}">Recipe's</a>
+                </li>
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('search') }}">Search</a>
+                </li>
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('profile') }}">profile</a>
+                </li>
+                <li class="nav-item row justify-content-center">
+                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('register') }}">register</a>
+                </li>
+            </ul>
+           
+          </div>
     </nav>
 
 <header class="masthead" style="background-image: url('https://www.gannett-cdn.com/-mm-/38f287cdb524567757cd04429c93779bc3eea0f2/c=294-0-4890-3456/local/-/media/2018/05/23/WIGroup/Milwaukee/636626934404281199-MJS-GRILLMEAT30-14OFX-WOOD-GRILLMEAT30-68917164.JPG?width=2560')">
@@ -68,9 +107,10 @@
     </div>
 </header>
 
+
+ <script src="static/css/js/navbar.js"></script>
 {% block content %}
 {% endblock %}
-
 <footer>
 
 </footer>

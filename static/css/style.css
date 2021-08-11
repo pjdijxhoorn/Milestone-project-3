@@ -4,10 +4,12 @@
 body{
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: black;
+    color: whitesmoke;
 }
 /*----------Colors*/
-
-
+.center{
+    text-align: center;
+}
 
 
 /*----------nav-bar*/
@@ -20,7 +22,7 @@ body{
 }
 /*---------logoblock  duwt de nav li naar rechts*/
 .logo-block{
-    padding-right: 200px;
+    padding-right: 10px;
 }
 
 .logo{
@@ -111,7 +113,7 @@ header.masthead .post-heading .subheading {
 
 
 header.masthead .post-heading .meta a {
-    color: #fff;
+    color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -125,10 +127,35 @@ header.masthead .post-heading .meta a {
 
 .hvr-underline-reveal:before {
     background: orangered;
-
 }
 
+/*----------recipe page*/
+
+.recipe-block{
+    padding:  15px;
+}
+.recipe-block i{
+    color: orangered;
+}
+
+.recipe-photo{
+    width: 100%;
+}
+/*----------register page*/
+
+.form{
+    padding: 20px;
+}
+.submit-btn
+{
+    background-color: orangered;
+    font-size: 30px;
+    color: white;
+}
+
+/*----------footer*/
 footer{
     height: 800px;
     background-color: black;
 }
+

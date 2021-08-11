@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-center"> register</h1>
+
+    <form class="col-12 row justify-content-center form" method="POST" action="{{ url_for('register') }}">
+        <div class="col-lg-6 col-sm-12" >
+          <!--Email-->
+        <div>
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" name="email" class="form-control" id="Email" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <!--Username-->
+        <div>
+            <label for="Username" class="form-label">Username</label>
+            <input type="Username" name="Username" class="form-control" id="Username" aria-describedby="Username">
+            <div id="Username" class="form-text">What would you like us to call you.</div>
+          </div>
+          <!--Password-->
+        <div>
+          <label for="Password" class="form-label">Password</label>
+          <input type="Password" name="Password" class="form-control" id="Password">
+        </div>
+        <!--Password confirm-->
+        <div>
+            <label for="Passwordconfirm" class="form-label">Confirm password</label>
+            <input type="password" name="Passwordconfirm" class="form-control" id="Passwordconfirm">
+          </div>
+        <button type="submit" class="btn submit-btn">Submit</button>
+    </div>
+      </form>
+
+{% endblock %}

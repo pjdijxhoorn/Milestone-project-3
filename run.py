@@ -36,7 +36,17 @@ def search():
 def login():
     return render_template("login.html")    
 
+@app.route("/logout")
+def logout():
+    return render_template("logout.html")
 
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 if __name__ == "__main__":
     app.run(
