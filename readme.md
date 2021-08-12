@@ -62,7 +62,8 @@ this is a website for
         - the
 
     - ### Future features
-        - The
+        - The users will be able to add more information about them self and see other users.
+        - the users will be able to  contact each other with messages.
 
 ## Technologies Used
 
