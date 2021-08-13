@@ -38,6 +38,12 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn search-btn submit-btn" type="submit"><h4>Search<i class="fas fa-search"></i></h4></button>
+                    </form>
+                  
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('index') }}"><h4>Home</h4></a>
@@ -66,6 +72,7 @@
                 </ul>
             </div>
         </div>
+        <br>
         <!--off canvas Nav-bar-->
         <div id="navMenu" class="col-12">
             <ul class="navbar-nav ml-auto">

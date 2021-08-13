@@ -51,6 +51,14 @@ body{
 .nav-item a{
     color: white;
 }
+
+.search-btn{
+    color: white;
+    border-color: white;
+    margin-right: 15px;
+}
+
+
 header{
     background-color: black;
 }

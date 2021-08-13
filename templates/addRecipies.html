@@ -1,4 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
     <h1 class="text-center">Add a recipe</h1>
+
+
+    <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Recipe Name:</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+            <label for="inputState" class="form-label">What kind of dish is it?</label>
+            
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+         
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">How long does it take to prepare?:</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">photo link </label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            
+            <label for="ingredients" class="form-label">what Ingredients do you need?</label>
+            <div class="input-group">
+            <br>
+            <textarea id="ingredients" class="form-control" aria-label="With textarea"></textarea>
+          </div>
+          <label for="ingredients" class="form-label">what are the steps to create your masterpiece?</label>
+            <div class="input-group">
+            <br>
+            <textarea id="ingredients" class="form-control" aria-label="With textarea"></textarea>
+          </div>
+        <div class="col-12">
+          <button type="submit" class="btn submit-btn">Add recipe</button>
+        </div>
+      </form>
 {% endblock %}

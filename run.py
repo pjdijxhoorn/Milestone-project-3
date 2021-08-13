@@ -28,6 +28,9 @@ def recipe():
     recipies = mongo.db.recipies.find()
     return render_template("recipe.html", recipies = recipies)
 
+@app.route("/search")
+def search():
+    return redirect (url_for("recipe"))
 
 @app.route("/addRecipies")
 def addRecipies():
