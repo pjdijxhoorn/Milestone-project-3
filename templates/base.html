@@ -45,21 +45,24 @@
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('recipe') }}">Recipe's</a>
                     </li>
+                    {% if session.user %}
                     <li class="nav-item">
-                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('search') }}">Search</a>
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('profile', username=session['user']) }}">profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('addRecipies') }}"> Add recipies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('logout') }}">Logout</a>
                     </li>
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('profile') }}">profile</a>
+                        <a class="nav-link hvr-underline-reveal" href="{{ url_for('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-reveal" href="{{ url_for('register') }}">register</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -67,27 +70,30 @@
         <div id="navMenu" class="col-12">
             
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('index') }}">Home</a>
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('index') }}">Home</a>
                 </li>
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('recipe') }}">Recipe's</a>
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('recipe') }}">Recipe's</a>
                 </li>
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('search') }}">Search</a>
+                {% if session.user %}
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('profile', username=session['user']) }}">profile</a>
                 </li>
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('login') }}">Login</a>
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('addRecipies') }}"> Add recipies</a>
                 </li>
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('logout') }}">Logout</a>
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('logout') }}">Logout</a>
                 </li>
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('profile') }}">profile</a>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('login') }}">Login</a>
                 </li>
-                <li class="nav-item row justify-content-center">
-                    <a class="nav-link hvr-underline-reveal col-2 center" href="{{ url_for('register') }}">register</a>
+                <li class="nav-item">
+                    <a class="nav-link hvr-underline-reveal" href="{{ url_for('register') }}">register</a>
                 </li>
+                {% endif %}
             </ul>
            
           </div>

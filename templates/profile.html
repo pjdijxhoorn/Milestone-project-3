@@ -1,4 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="text-center"> profile</h1>
+    <h1 class="center"> profile</h1>
+
+    <h3>{{ username }}'s Profile</h3>
+
+    <h1>user since</h1>
+    <h1>recipies added</h1>
+    
+
+    <h1>find all recipies made by this user and show them.</h1>
+
+    <h1>function to delete recipies</h1>
+    <h1>function to update recipies</h1>
+    <h1>function to add recipies</h1>
+
+
+
+    <!-- bug fix  how to get this code from navbar js via the base template?? -->
+    <!-- bug fix  how to get this code from navbar js via the base template?? -->
+    <!-- bug fix  how to get this code from navbar js via the base template?? -->
+    <script>
+        document.getElementById("navMenu").style.display = "none";
+
+        document.getElementById("nav-btn").addEventListener("click", navBarToggle);
+
+        function navBarToggle() {
+            var x = document.getElementById("navMenu");
+             if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            }
+    </script>
+
 {% endblock %}
