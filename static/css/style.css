@@ -56,8 +56,13 @@ body{
     color: white;
     border-color: white;
     margin-right: 15px;
-}
+    border-width: 2px;
 
+}
+.search-btn:hover{
+    border-color: orangered;
+    
+}
 
 header{
     background-color: black;

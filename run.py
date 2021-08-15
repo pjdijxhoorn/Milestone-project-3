@@ -28,13 +28,10 @@ def recipe():
     recipies = mongo.db.recipies.find()
     return render_template("recipe.html", recipies = recipies)
 
+
 @app.route("/search")
 def search():
     return redirect (url_for("recipe"))
-
-@app.route("/addRecipies")
-def addRecipies():
-    return render_template("addRecipies.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -122,6 +119,26 @@ def logout():
 
     return redirect (url_for("login"))
 
+
+@app.route("/addRecipies", methods=["GET", "POST"])
+def addRecipies():
+    if request.method == "POST":
+        task = {
+            "category_name": request.form.get("category_name"),
+            "Name_dish": request.form.get("Name_dish"),
+            "preperation_time": request.form.get("preperation_time"),
+            "Photo_link": request.form.get("Photo_link"),
+            "ingredients": request.form.get("ingredients"),
+            "explanation": request.form.get("explanation"),
+            "Other_requirments": request.form.get("Other_requirments"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Task Successfully Added")
+        return redirect(url_for("get_tasks"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("addRecipies.html", categories=categories)
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
