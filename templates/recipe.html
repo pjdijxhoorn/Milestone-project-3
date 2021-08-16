@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="text-center">recipies</h1>
-<div>
+
+<div class="row col-12">
     {%for recipe in recipies%}
-    <div class="col-md-4 list-inline-item recipe-block">
+    <div class="col-md-6 recipe-block">
+
         <p>genre: {{recipe.category_name}}</p><br>
         <h1>{{recipe.Name_dish}}<br></h1>
-        <p>recipe by still have to connect</p>
+        <p>recipe by: {{recipe.created_by}}</p>
         <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
         <i class="fas fa-plus-circle"></i> {{recipe.ingredients}}<br>
         <i class="fas fa-check-circle"></i> {{recipe.Other_requirments}}<br>
         <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
         <img class="recipe-photo" src="{{recipe.Photo_link}}"> <br>
+
+
     </div>
     {% endfor%}
 </div>
+
 {% endblock %}
 
 

@@ -1,10 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="text-center">Home Page</h1>
+<h1 class="text-center">Home Page</h1>
 
-    <h3>what is the site about </h3>
+<h3>what is the site about </h3>
 
-    <h3> the last 3 new recipies </h3>
+<h1> the last 3 new recipies </h1>
 
-    <h3> buy my fancy gear</h3>
+
+
+<!--now it shows all recipe's set it so only the last 3 entrys are shown-->
+
+<div class="row col-12">
+    {%for recipe in newRecipies%}
+    <div class="col-md-6 recipe-block">
+
+        <p>genre: {{recipe.category_name}}</p><br>
+        <h1>{{recipe.Name_dish}}<br></h1>
+        <p>recipe by: {{recipe.created_by}}</p>
+        <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
+        <i class="fas fa-plus-circle"></i> {{recipe.ingredients}}<br>
+        <i class="fas fa-check-circle"></i> {{recipe.Other_requirments}}<br>
+        <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
+        <img class="recipe-photo" src="{{recipe.Photo_link}}"> <br>
+
+
+    </div>
+    {% endfor%}
+</div>
+
+
+<h3> buy my fancy gear</h3>
 {% endblock %}

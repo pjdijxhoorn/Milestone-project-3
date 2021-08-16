@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    newRecipies = mongo.db.recipies.find()
+    return render_template("index.html", newRecipies = newRecipies )
 
 
 @app.route("/recipe")
@@ -143,6 +144,12 @@ def addRecipies():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("addRecipies.html", categories=categories)
+
+@app.route("/editRecipe/<recipe_id>", methods=["GET", "POST"])
+def editRecipe(recipe_id):
+    recipe = mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("editRecipe.html", recipe=recipe, categories=categories)
 
 if __name__ == "__main__":
     app.run(

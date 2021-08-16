@@ -164,6 +164,7 @@ header.masthead .post-heading .meta a {
 
 .recipe-block {
     padding: 15px;
+    border: 2px solid orangered;
 }
 
 .recipe-block i {
@@ -190,17 +191,19 @@ header.masthead .post-heading .meta a {
 
 /*----------profile page*/
 
-.edit-btn {
+.edit-btn,
+.remove-btn {
     color: white;
+    text-decoration: none;
+    width: 100px;
 }
 
-.edit-btn i {
-    color: white;
-}
-
+.edit-btn i,
 .remove-btn i {
     color: white;
 }
+
+
 
 /*----------footer*/
 
