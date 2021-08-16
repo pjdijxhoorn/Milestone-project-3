@@ -1,23 +1,25 @@
 /*----------font*/
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
-body{
+body {
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: black;
     color: whitesmoke;
 }
+
 /*----------Colors*/
-.center{
+.center {
     text-align: center;
 }
 
 
 /*----------messages*/
 
-.flash{
+.flash {
     line-height: 2;
 }
-.errorMsg{
+
+.errorMsg {
     color: orangered;
 }
 
@@ -26,45 +28,48 @@ body{
 .navbar {
     background-color: black;
 }
-.nav-item{
+
+.nav-item {
     padding-right: 10px;
 }
 
-.logo-block{
+.logo-block {
     padding-right: 10px;
 }
 
-.logo{
+.logo {
     font-size: 30px;
     color: white;
     text-decoration: none;
 }
 
 
-.logo:hover{
-    color: white;
-}
-.navbar i{
+.logo:hover {
     color: white;
 }
 
-.nav-item a{
+.navbar i {
     color: white;
 }
 
-.search-btn{
+.nav-item a {
+    color: white;
+}
+
+.search-btn {
     color: white;
     border-color: white;
     margin-right: 15px;
     border-width: 2px;
 
 }
-.search-btn:hover{
+
+.search-btn:hover {
     border-color: orangered;
-    
+
 }
 
-header{
+header {
     background-color: black;
 }
 
@@ -82,10 +87,11 @@ header.masthead {
 }
 
 @keyframes hero-zoom {
-    from{
+    from {
         transform: scale(1.0);
     }
-    to{
+
+    to {
         transform: scale(1.1);
     }
 }
@@ -108,6 +114,7 @@ header.masthead .site-heading {
 }
 
 @media only screen and (min-width: 768px) {
+
     header.masthead .page-heading,
     header.masthead .post-heading,
     header.masthead .site-heading {
@@ -117,6 +124,7 @@ header.masthead .site-heading {
 
 
 @media only screen and (min-width: 768px) {
+
     header.masthead .page-heading h1,
     header.masthead .site-heading h1 {
         font-size: 80px;
@@ -142,6 +150,7 @@ header.masthead .post-heading .meta a {
     header.masthead .post-heading h1 {
         font-size: 55px;
     }
+
     header.masthead .post-heading .subheading {
         font-size: 30px;
     }
@@ -153,23 +162,25 @@ header.masthead .post-heading .meta a {
 
 /*----------recipe page*/
 
-.recipe-block{
-    padding:  15px;
+.recipe-block {
+    padding: 15px;
 }
-.recipe-block i{
+
+.recipe-block i {
     color: orangered;
 }
 
-.recipe-photo{
+.recipe-photo {
     width: 100%;
 }
+
 /*----------register page*/
 
-.form{
+.form {
     padding: 20px;
 }
-.submit-btn
-{
+
+.submit-btn {
     background-color: orangered;
     font-size: 30px;
     color: white;
@@ -177,9 +188,27 @@ header.masthead .post-heading .meta a {
 
 }
 
+/*----------profile page*/
+
+.edit-btn {
+    color: white;
+}
+
+.edit-btn i {
+    color: white;
+}
+
+.remove-btn i {
+    color: white;
+}
+
 /*----------footer*/
-footer{
+
+footer {
     height: 800px;
     background-color: black;
 }
 
+height: 800px;
+background-color: black;
+}
