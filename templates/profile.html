@@ -1,25 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="center"> profile</h1>
+<h1 class="center"> {{ username }}'s profile</h1>
 
-<h3>{{ username }}'s Profile</h3>
 
 <h1>user since</h1>
-
-<h1>function to delete recipies</h1>
-<h1>function to update recipies</h1>
 <h1>function to add recipies</h1>
 
+
+<h1>{{ username }}'s Recepies</h1>
 <div class="row col-12">
     {%for recipe in userRecipe%}
     <div class="col-md-6 recipe-block">
 
 
         <div class="col-12 list-inline-item">
-            <a href=" {{ url_for('editRecipe', recipe_id=recipe._id) }}" class="btn submit-btn edit-btn" col-4>
+            <a href="{{ url_for('editRecipe', recipe_id=recipe._id) }}" class="btn submit-btn edit-btn" col-4>
                 <h6>Edit <i class="far fa-edit"></i></h6>
             </a>
-            <a href="#" class="btn submit-btn remove-btn" col-4>
+            <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn submit-btn remove-btn" col-4>
                 <h6>Delete <i class="far fa-trash-alt"></i></h6>
             </a>
         </div>
