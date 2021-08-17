@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
-
+ 
 
 app = Flask(__name__)
 
@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    newRecipies = mongo.db.recipies.find()
+    newRecipies = mongo.db.recipies.find().sort('_id', -1).limit(3)
+
     return render_template("index.html", newRecipies = newRecipies )
 
 
@@ -148,6 +149,7 @@ def addRecipies():
 @app.route("/editRecipe/<recipe_id>", methods=["GET", "POST"])
 def editRecipe(recipe_id):
     if request.method == "POST":
+        
         editedRecipe = {
             "category_name": request.form.get("category_name"),
             "Name_dish": request.form.get("Name_dish"),
