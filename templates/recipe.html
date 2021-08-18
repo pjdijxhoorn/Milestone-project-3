@@ -2,19 +2,30 @@
 {% block content %}
 <h1 class="text-center">recipies</h1>
 
-<form class="d-flex">
-    <input class="me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn search-btn" type="submit"><i class="fas fa-search"> Search</i></button>
-</form>
 
+
+
+<div class="row center col-12">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col-12 center">
+
+                <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search recipies" required>
+                <button type="submit" class="btn base-btn">
+                    <i class="fas fa-search left"></i> Search
+                </button>
+                <a href="{{ url_for('recipe') }}" class="btn base-btn">Reset</a>
+            </div>
+
+        </div>
+    </form>
+</div>
 
 
 <div class="row col-12">
     {%for recipe in recipies%}
     <div class="col-md-6 recipe-block">
-        <a href="" class="btn submit-btn remove-btn" col-4>
-            <i class="far fa-heart"></i>
-        </a>
+
 
         <h1>{{recipe.Name_dish}}<br></h1>
         <p>recipe by: {{recipe.created_by}}</p>
