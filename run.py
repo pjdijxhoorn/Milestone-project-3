@@ -21,7 +21,6 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     newRecipies = mongo.db.recipies.find().sort('_id', -1).limit(3)
-
     return render_template("index.html", newRecipies = newRecipies )
 
 
@@ -122,7 +121,6 @@ def profile(username):
 def logout():
     flash("You have been logged out")
     session.pop("user")
-
     return redirect (url_for("login"))
 
 
@@ -167,12 +165,17 @@ def editRecipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("editRecipe.html", recipe=recipe, categories=categories)
 
-@app.route("/deleteRecipe/<recipe_id>")
+@app.route("/deleteRecipe/<recipe_id>", methods=["GET", "POST"])
 def deleteRecipe(recipe_id):
-       mongo.db.recipies.remove({"_id": ObjectId(recipe_id)})
+       mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
        flash("recipe succesfully deleted")
        return redirect ( url_for('profile', username=session['user']))
-
+   
+@app.route("/adminpage")
+def adminpage():
+    categories = list (mongo.db.categories.find().sort("category_name", 1))
+    return render_template("adminpage.html", categories = categories)
+   
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),

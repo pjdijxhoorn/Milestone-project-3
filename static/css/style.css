@@ -189,6 +189,11 @@ header.masthead .post-heading .meta a {
 
 }
 
+.base-btn {
+    color: white;
+    background-color: orangered;
+}
+
 /*----------profile page*/
 
 .edit-btn,
@@ -201,6 +206,13 @@ header.masthead .post-heading .meta a {
 .edit-btn i,
 .remove-btn i {
     color: white;
+}
+
+/*----------admin page*/
+
+.card {
+    background-color: black;
+    border: 2px solid orangered;
 }
 
 /*----------footer*/
