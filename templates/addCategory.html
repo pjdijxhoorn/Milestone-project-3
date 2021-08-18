@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center">Add category</h1>
+
+
+<form class="row g-3" method="POST" action="{{ url_for('addCategory') }}">
+
+    <!--input category-->
+    <div class="col-md-6">
+        <label for="category_name" class="form-label">Category name</label>
+        <input type="text" class="form-control" id="category_name" name="category_name" required>
+    </div>
+
+    <!--input add button-->
+    <div class="col-12">
+        <button type="submit" class="btn submit-btn">Add category <i class="fas fa-folder-plus"></i></button>
+    </div>
+</form>
+{% endblock %}

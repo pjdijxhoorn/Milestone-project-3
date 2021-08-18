@@ -175,6 +175,17 @@ def deleteRecipe(recipe_id):
 def adminpage():
     categories = list (mongo.db.categories.find().sort("category_name", 1))
     return render_template("adminpage.html", categories = categories)
+
+@app.route("/addCategory", methods=["GET", "POST"])
+def addCategory():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New category Added")
+        return redirect(url_for("adminpage"))
+    return render_template ("addCategory.html")
    
 if __name__ == "__main__":
     app.run(
