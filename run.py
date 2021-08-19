@@ -227,7 +227,12 @@ def deletemessage(message_id):
     mongo.db.messages.remove({"_id": ObjectId(message_id)})
     flash("message succesfully deleted")
     return redirect ( url_for('profile', username=session['user']))
- 
+
+@app.route("/singleRecipe/<recipe_id>", methods=["GET", "POST"])
+def singleRecipe(recipe_id):
+    recipies = mongo.db.recipies.find({"_id": ObjectId(recipe_id)})
+    return render_template("singleRecipe.html", recipies = recipies)
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),

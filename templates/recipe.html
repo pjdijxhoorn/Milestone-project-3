@@ -6,7 +6,7 @@
 <i class="fas fa-heart"></i>
 
 
-<div class="row center col-12">
+<div class="row center col-12 g-0">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col-12 center">
@@ -23,10 +23,10 @@
 </div>
 
 
-<div class="row col-12">
+<div class="row col-12 g-0">
     {%for recipe in recipies%}
 
-    
+
     <div class="col-md-6 recipe-block">
         <h1>{{recipe.Name_dish}}<br></h1>
         <p>recipe by: {{recipe.created_by}}</p>
@@ -36,9 +36,9 @@
         <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
         <img class="recipe-photo" src="{{recipe.Photo_link}}"> <br>
 
-
+      <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" >Read more</a> 
     </div>
     {% endfor%}
 </div>
 
-{% endblock %}
+{% endblock %} recipe_id=recipe._id
