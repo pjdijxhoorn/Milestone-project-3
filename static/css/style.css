@@ -208,6 +208,26 @@ header.masthead .post-heading .meta a {
     color: white;
 }
 
+.mailbox {
+    border: solid 2px orangered;
+    padding: 15px;
+}
+
+.sendbox {
+    padding: 15px;
+    border: solid 2px orangered;
+}
+
+.innerbox {
+    background-color: white;
+    border: solid 2px orangered;
+}
+
+.messages {
+    color: black;
+    padding: 10px;
+}
+
 /*----------admin page*/
 
 .card {

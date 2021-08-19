@@ -107,13 +107,27 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     #grab the session user's username from db
+    if request.method == "POST":
+        message = {
+            "created_by": session["user"],
+            "for": request.form.get("for"),
+            "messages": request.form.get("mail")}
+    
+        mongo.db.messages.insert_one(message)
+        flash("Message send")
+        return redirect (url_for("profile", username=session["user"]))
+    
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    
     userRecipe = mongo.db.recipies.find(
-        {"created_by": session["user"]}
-    )    
+        {"created_by": session["user"]})
+    
+    messages = mongo.db.messages.find(
+        {"for": session["user"]})
+     
     if session["user"]:
-        return render_template("profile.html", username=username, userRecipe=userRecipe)
+        return render_template("profile.html", username=username, userRecipe=userRecipe, messages=messages)
     return redirect (url_for("login"))
 
 

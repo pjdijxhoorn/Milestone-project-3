@@ -4,8 +4,42 @@
 
 
 <h1>user since</h1>
+<div class="mailbox">
+    <h3>messages</h3>
+    <div class="innerbox">
+        {%for message in messages%}
+        <div>
+            <h6 class="messages center">From: {{message.created_by}}</h6>
+            <p class="messages">Message: {{message.messages}}</p>
+            <a href="#" class="btn submit-btn remove-btn center" col-4>
+                <h6>Delete <i class="far fa-trash-alt"></i></h6>
+            </a>
+        </div>
 
+        {% endfor%}
+    </div>
+</div>
+<div class="sendbox">
+    <form class="row g-3" method="POST" action="{{ url_for('profile', username=session['user']) }}">
 
+        <!--input msgReciever-->
+        <div class="col-md-6">
+            <label for="for" class="form-label">To:</label>
+            <input type="text" class="form-control" id="for" name="for" required>
+        </div>
+
+        <!--input mail-->
+        <div class="col-md-12">
+            <label for="mail" class="form-label">Message:</label>
+            <input type="text" id="mail" class="form-control" name="mail" required></input>
+        </div>
+
+        <!--input add button-->
+        <div class="col-12">
+            <button type="submit" class="btn submit-btn">Send <i class="far fa-envelope"></i></button>
+        </div>
+    </form>
+</div>
 
 <h1>{{ username }}'s Recepies</h1>
 <div class="row col-12">
