@@ -2,7 +2,8 @@
 {% block content %}
 <h1 class="text-center">recipies</h1>
 
-
+<i class="far fa-heart"></i>
+<i class="fas fa-heart"></i>
 
 
 <div class="row center col-12">
@@ -24,9 +25,9 @@
 
 <div class="row col-12">
     {%for recipe in recipies%}
+
+    
     <div class="col-md-6 recipe-block">
-
-
         <h1>{{recipe.Name_dish}}<br></h1>
         <p>recipe by: {{recipe.created_by}}</p>
         <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
