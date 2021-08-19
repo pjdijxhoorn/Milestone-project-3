@@ -183,7 +183,7 @@ def editRecipe(recipe_id):
 
 @app.route("/deleteRecipe/<recipe_id>", methods=["GET", "POST"])
 def deleteRecipe(recipe_id):
-       mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
+       mongo.db.recipies.remove({"_id": ObjectId(recipe_id)})
        flash("recipe succesfully deleted")
        return redirect ( url_for('profile', username=session['user']))
    
@@ -222,7 +222,12 @@ def delete_category(category_id):
     flash("Category Successfully Deleted")
     return redirect(url_for("adminpage"))
 
-   
+@app.route("/deletemessage/<message_id>", methods=["GET", "POST"])
+def deletemessage(message_id):
+    mongo.db.messages.remove({"_id": ObjectId(message_id)})
+    flash("message succesfully deleted")
+    return redirect ( url_for('profile', username=session['user']))
+ 
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),

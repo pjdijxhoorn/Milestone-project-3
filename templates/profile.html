@@ -2,16 +2,16 @@
 {% block content %}
 <h1 class="center"> {{ username }}'s profile</h1>
 
-
-<h1>user since</h1>
 <div class="mailbox">
-    <h3>messages</h3>
+    <h3 class="center">messages</h3>
     <div class="innerbox">
         {%for message in messages%}
-        <div>
+        <div class="mail">
             <h6 class="messages center">From: {{message.created_by}}</h6>
+
             <p class="messages">Message: {{message.messages}}</p>
-            <a href="#" class="btn submit-btn remove-btn center" col-4>
+
+            <a href="{{ url_for('deletemessage', message_id=message._id) }}" class="btn submit-btn remove-btn center" col-4>
                 <h6>Delete <i class="far fa-trash-alt"></i></h6>
             </a>
         </div>
@@ -41,10 +41,10 @@
     </form>
 </div>
 
-<h1>{{ username }}'s Recepies</h1>
-<div class="row col-12">
+<h1 class="center">{{ username }}'s Recepies</h1>
+<div class="row col-12 g-0">
     {%for recipe in userRecipe%}
-    <div class="col-md-6 recipe-block">
+    <div class="col-md-6 recipe-block g-0">
 
 
         <div class="col-12 list-inline-item">
@@ -68,7 +68,7 @@
 </div>
 
 
-<h1>Favourite recipies</h1>
+<h1 class="center">Favourite recipies</h1>
 
 
 <!-- bug fix  how to get this code from navbar js via the base template?? -->
