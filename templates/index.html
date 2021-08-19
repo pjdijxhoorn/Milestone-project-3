@@ -14,20 +14,20 @@
     {%for recipe in newRecipies%}
     <div class="col-md-6 recipe-block">
 
-        <p>genre: {{recipe.category_name}}</p><br>
+        <p> Type of dish: {{recipe.category_name}}</p>
         <h1>{{recipe.Name_dish}}<br></h1>
-        <p>recipe by: {{recipe.created_by}}</p>
+        <p>Recipe by: {{recipe.created_by}}</p>
         <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
         <i class="fas fa-plus-circle"></i> {{recipe.ingredients}}<br>
         <i class="fas fa-check-circle"></i> {{recipe.Other_requirments}}<br>
         <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
         <img class="recipe-photo" src="{{recipe.Photo_link}}"> <br>
 
-
+        <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" >Read more</a>
     </div>
     {% endfor%}
 </div>
 
 
-<h3> buy my fancy gear</h3>
+<h3> Buy my fancy gear</h3>
 {% endblock %}

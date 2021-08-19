@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="text-center"> register</h1>
+    <h1 class="text-center"> Register</h1>
 
     <form class="col-12 row justify-content-center form" method="POST" action="{{ url_for('register') }}">
         <div class="col-lg-6 col-sm-12" >
@@ -14,8 +14,8 @@
         <div>
             <label for="username" class="form-label">Username</label>
             <input type="text" name="username" class="form-control" id="username" aria-describedby="Username"
-              minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-            <div class="form-text">What would you like us to call you? Your Username should between 5 and 15 characters long and made up of letters and numbers.</div>
+              minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+            <div class="form-text"> Your Username should between 5 and 15 characters long and made up of letters and / or numbers.</div>
           </div>
           <!--Password-->
         <div>
@@ -28,7 +28,7 @@
         <div>
             <label for="passwordconfirm" class="form-label">Confirm password</label>
             <input type="password" name="passwordconfirm" class="form-control" id="passwordconfirm">
-            <div class="form-text">typ your password again to check.</div>
+            <div class="form-text">Typ your password again to check.</div>
           </div>
         <button type="submit" class="btn submit-btn">Submit</button>
     </div>

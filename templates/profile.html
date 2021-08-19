@@ -3,7 +3,7 @@
 <h1 class="center"> {{ username }}'s profile</h1>
 
 <div class="mailbox">
-    <h3 class="center">messages</h3>
+    <h3 class="center">Messages</h3>
     <div class="innerbox">
         {%for message in messages%}
         <div class="mail">
@@ -25,7 +25,7 @@
         <!--input msgReciever-->
         <div class="col-md-6">
             <label for="for" class="form-label">To:</label>
-            <input type="text" class="form-control" id="for" name="for" required>
+            <input type="text" class="form-control" id="for" name="for" placeholder="Make sure to use the correct username else the message will not arrive" required>
         </div>
 
         <!--input mail-->
@@ -55,8 +55,8 @@
                 <h6>Delete <i class="far fa-trash-alt"></i></h6>
             </a>
         </div>
-        <p>genre: {{recipe.category_name}}</p><br>
-        <h1>{{recipe.Name_dish}}<br></h1>
+        <p> Type of dish: {{recipe.category_name}}</p>
+        <h1>{{recipe.Name_dish}}</h1>
         <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
         <i class="fas fa-plus-circle"></i> {{recipe.ingredients}}<br>
         <i class="fas fa-check-circle"></i> {{recipe.Other_requirments}}<br>

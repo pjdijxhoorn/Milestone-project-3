@@ -174,7 +174,9 @@ header.masthead .post-heading .meta a {
 .recipe-photo {
     width: 100%;
 }
-
+.search-block{
+    margin: 20px;
+}
 /*----------register page*/
 
 .form {
