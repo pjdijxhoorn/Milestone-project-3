@@ -121,9 +121,6 @@ body {
     padding: 5px;
 }
 
-.hero-text-box{
-    
-}
 
 @media only screen and (max-width: 768px) {
     .hero-image {
@@ -169,6 +166,7 @@ body {
 
 .cardBox .card .content{
 padding: 10px;
+overflow: hidden;
 }
     
 .cardBox .card .content h3 {
@@ -215,6 +213,11 @@ padding: 10px;
     text-decoration: none;
     justify-content: center;
     display: flex;
+}
+
+.ingredients-list{
+    height: 70px;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
