@@ -34,8 +34,8 @@ def recipe():
 def search():
     query = request.form.get("query")
     recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
-    if recipies == 0:
-        flash("Recipe Successfully Added")
+    if recipies == []:
+        flash("Sorry we couldn't find anything matching Your search query!")
     return render_template("recipe.html", recipies = recipies)
 
 
