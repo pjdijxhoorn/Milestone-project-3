@@ -296,7 +296,23 @@ overflow: hidden;
 .addRecipiesForm{
     padding: 20px;
 }
+/*----------single recipe page*/
+.recipe-block{
+    border: 2px solid orangered;
+    padding: 20px;
+}
 
+.recipe-block i{
+    color: orangered;
+}
+
+
+.recipe-photo-single{
+  height: 400px;
+  max-width: 100%;
+  width: 400px;
+
+}
 /*----------footer*/
 
 footer {
