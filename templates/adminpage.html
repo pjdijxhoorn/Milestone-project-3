@@ -11,9 +11,10 @@
 </div>
 
 <h3 class="center">categories edit</h3>
-<div class="row g-0">
+
+<div class="col-12  center g-0" >
     {%for category in categories%}
-    <div class="categorycard" style="width: 18rem;">
+    <div class="categorycard center-align col-12">
         <div class="card-body categories">
             <h5 class="card-title">{{ category.category_name}}</h5>
             <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn base-btn edit-btn">Edit</a>

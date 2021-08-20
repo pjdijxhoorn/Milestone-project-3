@@ -158,9 +158,9 @@
 
 <section id="hero-outer">
     <div class="hero-image" style="background-image: url('https://www.gannett-cdn.com/-mm-/38f287cdb524567757cd04429c93779bc3eea0f2/c=294-0-4890-3456/local/-/media/2018/05/23/WIGroup/Milwaukee/636626934404281199-MJS-GRILLMEAT30-14OFX-WOOD-GRILLMEAT30-68917164.JPG?width=2560')">
-        <div class="overlay"></div>
+        <div class="overlay col-12"></div>
         
-            <div class="row ">
+            <div class="row g-0 hero-text-box">
                     <div class="center hero-text">
                         <h1>BBQ with Friends </h1>
                         <span class="subheading">A website for sharing and storing recipies.</span>
@@ -176,7 +176,7 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
-        <div class="row flashes center">
+        <div class="col-12 g-0 flashes center">
             <h2 class="errorMsg">{{ message }}</h2>
         </div>
         {% endfor %}
@@ -184,7 +184,7 @@
         {% endwith %}
     </section>
 
-    <main>
+    <main class="col-12 g-0">
         {% block content %}
         {% endblock %}
     </main>
