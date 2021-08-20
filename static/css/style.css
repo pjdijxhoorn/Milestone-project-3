@@ -68,18 +68,26 @@ body {
     border-color: orangered;
 
 }
+.hvr-underline-reveal:before {
+    background: orangered;
+}
+/*----------hero image*/
+#hero-outer{
+    height:400px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 
-header {
-    background-color: black;
 }
 
-header.masthead {
+.hero-image {
     margin-bottom: 50px;
     background: no-repeat center center;
     background-color: #868e96;
     background-attachment: scroll;
     position: relative;
     background-size: cover;
+    height: 400px;
 
     animation-name: hero-zoom;
     animation-duration: 5s;
@@ -96,7 +104,7 @@ header.masthead {
     }
 }
 
-header.masthead .overlay {
+.hero-image .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -106,59 +114,24 @@ header.masthead .overlay {
     opacity: 0.5;
 }
 
-header.masthead .page-heading,
-header.masthead .post-heading,
-header.masthead .site-heading {
-    padding: 200px 0 150px;
-    color: white;
+.hero-text{
+    margin-top: 150px;
+    font-size: large;
+    padding: 5px;
 }
 
-@media only screen and (min-width: 768px) {
 
-    header.masthead .page-heading,
-    header.masthead .post-heading,
-    header.masthead .site-heading {
-        padding: 200px 0;
+@media only screen and (max-width: 768px) {
+    .hero-image {
+        height: 300px;
+
     }
-}
+    #hero-outer{
+        height:300px;
+        
+    }}
 
 
-@media only screen and (min-width: 768px) {
-
-    header.masthead .page-heading h1,
-    header.masthead .site-heading h1 {
-        font-size: 80px;
-    }
-}
-
-
-
-header.masthead .post-heading .subheading {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 10px 0 30px;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-
-
-header.masthead .post-heading .meta a {
-    color: white;
-}
-
-@media only screen and (min-width: 768px) {
-    header.masthead .post-heading h1 {
-        font-size: 55px;
-    }
-
-    header.masthead .post-heading .subheading {
-        font-size: 30px;
-    }
-}
-
-.hvr-underline-reveal:before {
-    background: orangered;
-}
 
 /*----------recipe page*/
 
