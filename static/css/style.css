@@ -27,6 +27,8 @@ body {
 
 .navbar {
     background-color: black;
+    border-bottom:2px solid #A22C00;
+    border-bottom-style: outset;
 }
 
 .nav-item {
@@ -316,6 +318,12 @@ overflow: hidden;
 /*----------footer*/
 
 footer {
-    height: 800px;
+    height: 60px;
     background-color: black;
+    border-top:2px solid #A22C00;
+    border-top-style: outset;
+}
+
+.footer-content{
+    padding-top: 20px;
 }
