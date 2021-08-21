@@ -3,8 +3,6 @@
 
 <div class="row col-12 g-0">
     {%for recipe in recipies%}
-
-
     <div class="col-12 recipe-block">
         <div class="col-12">
             <p> Type of dish: {{recipe.category_name}}</p>
@@ -12,20 +10,20 @@
             <p>recipe by: {{recipe.created_by}}</p>
         </div>
         <div class="row g-0">
-        <div class="col-md-12 col-lg-5 ">
-        <img class="recipe-photo-single" src="{{recipe.Photo_link}}">
+            <div class="col-md-12 col-lg-5 ">
+                <img class="recipe-photo-single" src="{{recipe.Photo_link}}" alt="recipe photo">
+            </div>
+            <br>
+            <div class="col-md-12 col-lg-5 recipe-content-block">
+                <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
+                <i class="fas fa-plus-circle"></i> {{recipe.ingredients}}<br>
+                <i class="fas fa-check-circle"></i> {{recipe.Other_requirments}}<br>
+                <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
+            </div>
         </div>
-        <br>
-        <div class="col-md-12 col-lg-5 recipe-content-block">
-        <i class="fas fa-clock"></i> {{recipe.preperation_time}}<br>
-        <i class="fas fa-plus-circle"></i> {{recipe.ingredients}}<br>
-        <i class="fas fa-check-circle"></i> {{recipe.Other_requirments}}<br>
-        <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
+    {% endfor%}
     </div>
 </div>
-    {% endfor%}
-</div>
-
 <script>
     document.getElementById("navMenu").style.display = "none";
 
