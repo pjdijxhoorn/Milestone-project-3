@@ -20,7 +20,7 @@ body {
 }
 
 .errorMsg {
-    color: orangered;
+    color: #A22C00;
 }
 
 /*----------nav-bar*/
@@ -65,11 +65,11 @@ body {
 }
 
 .search-btn:hover {
-    border-color: orangered;
+    border-color: #A22C00;
 
 }
 .hvr-underline-reveal:before {
-    background: orangered;
+    background: #A22C00;
 }
 /*----------hero image*/
 #hero-outer{
@@ -196,7 +196,7 @@ overflow: hidden;
 }
 
 .card i {
-    color: orangered;
+    color: #A22C00;
 }
 .photobox{
     padding: 0, 30px;
@@ -233,7 +233,7 @@ overflow: hidden;
 }
 
 .submit-btn {
-    background-color: orangered;
+    background-color: #A22C00;
     font-size: 30px;
     color: white;
     margin: 20px;
@@ -242,7 +242,7 @@ overflow: hidden;
 
 .base-btn {
     color: white;
-    background-color: orangered;
+    background-color: #A22C00;
 }
 
 /*----------profile page*/
@@ -260,18 +260,18 @@ overflow: hidden;
 }
 
 .mailbox {
-    border: solid 2px orangered;
+    border: solid 2px #A22C00;
     padding: 15px;
 }
 
 .sendbox {
     padding: 15px;
-    border: solid 2px orangered;
+    border: solid 2px #A22C00;
 }
 
 .innerbox {
     background-color: white;
-    border: solid 2px orangered;
+    border: solid 2px #A22C00;
 }
 
 .messages {
@@ -287,7 +287,7 @@ overflow: hidden;
 
 .categorycard {
     background-color: black;
-    border: 2px solid orangered;
+    border: 2px solid #A22C00;
 }
 
 
@@ -298,12 +298,12 @@ overflow: hidden;
 }
 /*----------single recipe page*/
 .recipe-block{
-    border: 2px solid orangered;
+    border: 2px solid #A22C00;
     padding: 20px;
 }
 
-.recipe-block i{
-    color: orangered;
+.recipe-content-block i{
+    color: #A22C00;
 }
 
 

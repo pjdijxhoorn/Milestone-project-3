@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="text-center">recipies</h1>
+<h1 class="text-center">Recipes</h1>
 
 <i class="far fa-heart"></i>
 <i class="fas fa-heart"></i>
@@ -10,7 +10,7 @@
     <form action="{{ url_for('search') }}" method="post">
         <div class="center-align">
             <div class="input-field center">
-                <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search recipies" required>
+                <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search recipes" required>
                 <br>
                 <button type="submit" class="btn base-btn">
                     <i class="fas fa-search left"></i> Search

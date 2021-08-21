@@ -227,7 +227,7 @@ def delete_category(category_id):
 @app.route("/deletemessage/<message_id>", methods=["GET", "POST"])
 def deletemessage(message_id):
     mongo.db.messages.remove({"_id": ObjectId(message_id)})
-    flash("message succesfully deleted")
+    flash("message successfully deleted")
     return redirect ( url_for('profile', username=session['user']))
 
 @app.route("/singleRecipe/<recipe_id>", methods=["GET", "POST"])

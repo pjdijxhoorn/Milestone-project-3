@@ -3,18 +3,18 @@
 <h1 class="text-center">Home Page</h1>
 
 <h3 class="center">what is the site about </h3>
-<p class="center">On this site you will be able find, make, share and store BBQ recipies. And you can send messages to others on the site to compliment there dish 
-or suggest alterations. Dont wait but register yourself so you can start now!
+<p class="center">On this site you will be able find, make, share and store BBQ recipes. And you can send messages to others on the site to compliment there dish 
+or suggest alterations. Don't wait but register yourself so you can start now!
      </p>
 
-<h3 class="center"> the last 3 new recipies </h3>
+<h3 class="center"> the last 3 new recipes </h3>
 
 
 
 <!--now it shows all recipe's set it so only the last 3 entrys are shown-->
 <div class="cardBox row col-12 g-0">
     {%for recipe in newRecipies%}
-    <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" class="col-sm-12 col-md-6 col-lg-4 g-0 cardlink">
+    <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" class="col-sm-12 col-md-6 col-xl-4 g-0 cardlink">
     <div class="card col-12">
         <div class="content">
             <h3>{{recipe.Name_dish}}</h1>
