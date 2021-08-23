@@ -6,7 +6,7 @@ This is a website for finding, making, sharing and storing BBQ recipes.
 And on top of that the site gives users the ability to send messages to each.
 
 
-![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
+![A image that shows how the website looks on different devices.]()
 
 ## User Experience (UX)
 
@@ -17,19 +17,19 @@ And on top of that the site gives users the ability to send messages to each.
         1. As a First Time Visitor, I would like to see what the site is about and how the site works. 
            The expected first time visitors would be people looking for a good recipe. 
         2. As a First Time Visitor, I want to find a good recipe.
-        3. As a First Time Visitor,
+        3. As a First Time Visitor, 
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to make and store recipes
+        1. As a Returning Visitor, I want to make and store recipes.
         2. As a Returning Visitor, 
         3. As a Returning Visitor, 
         4. As a Returning Visitor,
 
     -   #### Frequent User Goals
         1. As a Frequent User, I want to see the latest recipes added.
-        2. As a Frequent User, I want to edit my stored recipes 
-        3. As a Frequent User, I want to communicated with other users 
+        2. As a Frequent User, I want to be able to edit and or delete my stored recipes. 
+        3. As a Frequent User, I want to communicated with other users about recipes.
 
     ## Design
     -   ### Colour Scheme
@@ -39,15 +39,16 @@ And on top of that the site gives users the ability to send messages to each.
 
         The color test - [View](static/pdf/color-samples.pdf)
 
-    -   #### Typography
-        The
+    -   ### Typography
+        The font used is Architects Daughter this is a informal yet easy to read font. This styles well with the main theme of the site: BBQ.
+        as back-up in the case Architects Daughter fails there is sans-serif.  
 
--    ### Imagery
+    -    ### Imagery
 
 
--   ### Wireframes
+    -   ### Wireframes
 
-    - Wireframe for Coach helper - [View]()
+        - Wireframe for BBQ with Friends - [View]()
 
 ## Features
 
@@ -135,6 +136,10 @@ the
 ### Code
 
 ### Content
+
+### images
+    - the hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
+    it was a free photo made by rob
 
 ### Acknowledgements
 

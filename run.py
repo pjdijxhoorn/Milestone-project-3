@@ -240,13 +240,7 @@ def favourite(recipe_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    test = mongo.db.users.find()
-   
-    print(test)
-    
-    print("bye")
-
-    return redirect (url_for("recipe", recipe = recipe))
+    return redirect (url_for("recipe", recipe = recipe, username =username, ))
 
 if __name__ == "__main__":
     app.run(
