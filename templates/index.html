@@ -14,26 +14,28 @@ or suggest alterations. Don't wait but register yourself so you can start now!
 <!--now it shows all recipe's set it so only the last 3 entrys are shown-->
 <div class="cardBox row col-12 g-0">
     {%for recipe in newRecipies%}
-    <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" class="col-sm-12 col-md-6 col-xl-4 g-0 cardlink">
-    <div class="card col-12">
+    <div class="card col-sm-12 col-md-6 col-lg-4 g-0">
         <div class="content">
-            <h3>{{recipe.Name_dish}}</h3>
-            <p>Recipe by: {{recipe.created_by}}</p>
+            <div class="col-12 row g-0 row justify-content-between">
+                <p class="col-9">Recipe by: {{recipe.created_by}}</p>
+                
+                </div>
+            <h3 class="center">{{recipe.Name_dish}}</h3>
+            
             <div class="photobox col-12 center center-align">
-                <img class="recipe-photo col-6 center center-align" src="{{recipe.Photo_link}}" alt="recipe Photo">
+                <img class="recipe-photo col-6 center center-align" src="{{recipe.Photo_link}}" alt="recipe photo">
             </div>
             <br>
-             <p><i class="fas fa-clock"></i>  {{recipe.preperation_time}}/p>
-            <br>
+             <p><i class="fas fa-clock"></i>  {{recipe.preperation_time}}</p>
              <p class="ingredients-list"><i class="fas fa-plus-circle"></i>  {{recipe.ingredients}}</p>
-            <br>
+        
             <div class="cardlink col-12 center center-align">
-                <p>Click on the card to see full recipe</p>
-                
+                <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" class="cardlink">
+                Click here to see full recipe
+                </a>
             </div> 
         </div>
     </div>
-</a>
     {% endfor%}
 </div>
 

@@ -186,41 +186,56 @@ overflow: hidden;
 .cardBox .card .content a {
     position: relative;
     display: inline-block;
-    padding: 8px 20px;
-    margin-top: 15px;
-    background: #fff;
-    color: #000;
+    background-color: #A22C00;
+    color: white;
     border-radius: 20px;
+    padding: 5px;
     text-decoration: none;
     font-weight: 500;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    
+    border: solid black 2px;
 }
 
 .card i {
     color: #A22C00;
 }
 .photobox{
-    padding: 0, 30px;
+    padding: 0 30px;
 }
 
 .recipe-photo {
     border-radius: 50%;
     height: 220px;
     width: 220px;
+    border:  2px solid black;
 
 }
 
 .cardlink{
-    text-decoration: none;
     justify-content: center;
-    display: flex;
 }
 
 .ingredients-list{
     height: 70px;
     overflow: hidden;
 }
+.favourite{
+ width: 45px;
+ height: 45px;
+ padding: 0;
+ margin:0;
+ 
+}
+.favourite i{
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-top: 5px;
+    
+}
+    
+
 
 @media only screen and (max-width: 768px) {
     .cardBox .card{
@@ -327,3 +342,4 @@ footer {
 .footer-content{
     padding-top: 20px;
 }
+

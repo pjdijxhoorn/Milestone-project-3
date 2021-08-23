@@ -6,7 +6,7 @@ This is a website for finding, making, sharing and storing BBQ recipes.
 And on top of that the site gives users the ability to send messages to each.
 
 
-![A image that shows how the website looks on different devices.]()
+![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
 
 ## User Experience (UX)
 
@@ -35,7 +35,7 @@ And on top of that the site gives users the ability to send messages to each.
     -   ### Colour Scheme
         Within this website only 3 colors were used. black, white and a dark tone of orange. black was used as the background to give the site a polished and stylish look. on top of that the black gives association with the bbq with coals. white was used for the text because this matches well with the black and makes it easy to read. Orange was used to direct the users attention to the interactive parts of the site. this was chosen because it gives the association with the fire of a BBQ, also when using mainly white and black any color pops up more on a site and draws attention.
 
-        ![The used colors with their codes]()
+        ![The used colors with their codes](static/images/color.PNG)
 
         The color test - [View](static/pdf/color-samples.pdf)
 

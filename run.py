@@ -132,9 +132,6 @@ def profile(username):
         return render_template("profile.html", username=username, userRecipe=userRecipe, messages=messages)
     return redirect (url_for("login"))
 
-
-
-
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
@@ -234,6 +231,22 @@ def deletemessage(message_id):
 def singleRecipe(recipe_id):
     recipies = mongo.db.recipies.find({"_id": ObjectId(recipe_id)})
     return render_template("singleRecipe.html", recipies = recipies)
+
+@app.route("/favourite/<recipe_id>", methods=["GET", "POST"])
+def favourite(recipe_id):
+    recipe = mongo.db.recipies.find(
+        {"_id": ObjectId(recipe_id)})
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    test = mongo.db.users.find()
+   
+    print(test)
+    
+    print("bye")
+
+    return redirect (url_for("recipe", recipe = recipe))
 
 if __name__ == "__main__":
     app.run(
