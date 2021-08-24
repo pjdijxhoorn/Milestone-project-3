@@ -27,7 +27,11 @@ def index():
 @app.route("/recipe")
 def recipe():
     recipies = mongo.db.recipies.find()
-    return render_template("recipe.html", recipies = recipies)
+
+    favourites = mongo.db.favourites.find(
+        {"created_by": session["user"]})
+
+    return render_template("recipe.html", recipies = recipies, favourites = favourites)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -240,7 +244,18 @@ def favourite(recipe_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    return redirect (url_for("recipe", recipe = recipe, username =username, ))
+    user = mongo.db.users.find_one({"username": session["user"],"favourites": recipe_id})
+    try:
+        test = user.get("favourites")
+    except: 
+        test = []
+   
+
+    if recipe_id in test:
+        print("hello")    
+    else:
+         mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
+    return redirect (url_for("recipe", recipe = recipe, username = username, ))
 
 if __name__ == "__main__":
     app.run(

@@ -29,9 +29,13 @@
         <div class="content">
             <div class="col-12 row g-0 row justify-content-between">
                 <p class="col-9">Recipe by: {{recipe.created_by}}</p>
+
+
                 <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
                         <i class="far fa-heart"></i>
                 </a>
+
+                
                 </div>
             <h3 class="center">{{recipe.Name_dish}}</h3>
             
