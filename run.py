@@ -131,7 +131,7 @@ def profile(username):
     
     messages = mongo.db.messages.find(
         {"for": session["user"]})
-     
+
     if session["user"]:
         return render_template("profile.html", username=username, userRecipe=userRecipe, messages=messages)
     return redirect (url_for("login"))
@@ -246,16 +246,16 @@ def favourite(recipe_id):
 
     user = mongo.db.users.find_one({"username": session["user"],"favourites": recipe_id})
     try:
-        test = user.get("favourites")
+        favourites = user.get("favourites")
     except: 
-        test = []
+        favourites = []
    
 
-    if recipe_id in test:
-        print("hello")    
+    if recipe_id in favourites:
+         mongo.db.users.update({"username": session["user"]},{"$pull":{"favourites": recipe_id}})
     else:
          mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
-    return redirect (url_for("recipe", recipe = recipe, username = username, ))
+    return redirect (url_for("recipe", recipe = recipe, username = username, favourites = favourites ))
 
 if __name__ == "__main__":
     app.run(
