@@ -66,10 +66,6 @@ body {
 
 }
 
-.search-btn:hover {
-    border-color: #A22C00;
-
-}
 .hvr-underline-reveal:before {
     background: #A22C00;
 }
@@ -245,6 +241,14 @@ overflow: hidden;
     .cardBox .card{
         width: 350px;
     }}
+
+.full-heart::before{
+    color: #fff;
+}
+.full-heart::after{
+    color: red;
+}
+
 
 
 /*----------register page*/

@@ -21,17 +21,26 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     newRecipies = mongo.db.recipies.find().sort('_id', -1).limit(3)
-    return render_template("index.html", newRecipies = newRecipies )
+    return render_template("index.html", newRecipies=newRecipies )
 
 
 @app.route("/recipe")
 def recipe():
     recipies = mongo.db.recipies.find()
 
-    favourites = mongo.db.favourites.find(
-        {"created_by": session["user"]})
+    try:
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
-    return render_template("recipe.html", recipies = recipies, favourites = favourites)
+        user = mongo.db.users.find_one({"username": session["user"]})
+        try:
+            favourites = user.get("favourites")
+        except: 
+            favourites = []
+    except:     
+        favourites = []
+        username = []
+    return render_template("recipe.html", recipies=recipies, favourites=favourites, username=username)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -40,7 +49,7 @@ def search():
     recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
     if recipies == []:
         flash("Sorry we couldn't find anything matching Your search query!")
-    return render_template("recipe.html", recipies = recipies)
+    return render_template("recipe.html", recipies=recipies)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -122,7 +131,7 @@ def profile(username):
         mongo.db.messages.insert_one(message)
         flash("Message send")
         return redirect (url_for("profile", username=session["user"]))
-    
+
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     
@@ -132,8 +141,21 @@ def profile(username):
     messages = mongo.db.messages.find(
         {"for": session["user"]})
 
+    try:
+        user = mongo.db.users.find_one({"username": session["user"]})
+        try:
+            favourites = user.get("favourites")  
+        except: 
+            favourites = []
+        
+    except:     
+        favourites = []
+        username = []    
+
+    recipies = mongo.db.recipies.find()
+    
     if session["user"]:
-        return render_template("profile.html", username=username, userRecipe=userRecipe, messages=messages)
+        return render_template("profile.html", username=username, userRecipe=userRecipe, messages=messages, recipies=recipies, favourites=favourites)
     return redirect (url_for("login"))
 
 @app.route("/logout")
@@ -193,7 +215,7 @@ def deleteRecipe(recipe_id):
 @app.route("/adminpage")
 def adminpage():
     categories = list (mongo.db.categories.find().sort("category_name", 1))
-    return render_template("adminpage.html", categories = categories)
+    return render_template("adminpage.html", categories=categories)
 
 @app.route("/addCategory", methods=["GET", "POST"])
 def addCategory():
@@ -234,7 +256,7 @@ def deletemessage(message_id):
 @app.route("/singleRecipe/<recipe_id>", methods=["GET", "POST"])
 def singleRecipe(recipe_id):
     recipies = mongo.db.recipies.find({"_id": ObjectId(recipe_id)})
-    return render_template("singleRecipe.html", recipies = recipies)
+    return render_template("singleRecipe.html", recipies=recipies)
 
 @app.route("/favourite/<recipe_id>", methods=["GET", "POST"])
 def favourite(recipe_id):
@@ -255,7 +277,7 @@ def favourite(recipe_id):
          mongo.db.users.update({"username": session["user"]},{"$pull":{"favourites": recipe_id}})
     else:
          mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
-    return redirect (url_for("recipe", recipe = recipe, username = username, favourites = favourites ))
+    return redirect (url_for("recipe", recipe=recipe, username=username, favourites=favourites ))
 
 if __name__ == "__main__":
     app.run(

@@ -2,10 +2,6 @@
 {% block content %}
 <h1 class="text-center">Recipes</h1>
 
-<i class="far fa-heart"></i>
-<i class="fas fa-heart"></i>
-
-
 <div class="row center col-12 g-0 search-block">
     <form action="{{ url_for('search') }}" method="post">
         <div class="center-align">
@@ -29,12 +25,16 @@
         <div class="content">
             <div class="col-12 row g-0 row justify-content-between">
                 <p class="col-9">Recipe by: {{recipe.created_by}}</p>
-
-
-                <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
-                        <i class="far fa-heart"></i>
-                </a>
-
+                {% if session.user%}
+                
+                        <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
+                            {% if recipe._id|string in favourites %}
+                            <i class="far fa-times-circle"></i>   
+                            {% else %}
+                                <i class="far fa-plus-square"></i>
+                            {% endif %}  
+                        </a> 
+                {% endif %}
                 
                 </div>
             <h3 class="center">{{recipe.Name_dish}}</h3>
