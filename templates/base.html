@@ -18,7 +18,8 @@
     <!--links, libraries and scripts-->
     <link rel="icon" type="image/png" href="static/images/favicon.png">
 
-
+    {% block styles %}
+    {% endblock %}
     <title>BBQ wit Friends</title>
 </head>
 
@@ -157,7 +158,7 @@
     </nav>
 
 <section id="hero-outer">
-    <div class="hero-image" style="background-image: url('static/images/hero-image.jpg')">
+    <div class="hero-image" style="background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/299-rob00154-eye.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=afa806ffe5b1581088f61c8f627ac237)">
         <div class="overlay col-12"></div>
         
             <div class="row g-0 hero-text-box"> 
@@ -199,7 +200,8 @@
 
     <script src="static/js/navbar.js"></script>
     <script type="text/javascript" src="static/js/tilt.js"></script>
-
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>
