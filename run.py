@@ -45,11 +45,26 @@ def recipe():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    try:
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+        user = mongo.db.users.find_one({"username": session["user"]})
+        try:
+            favourites = user.get("favourites")
+        except: 
+            favourites = []
+    except:     
+        favourites = []
+        username = []
+
+
+
     query = request.form.get("query")
     recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
     if recipies == []:
         flash("Sorry we couldn't find anything matching Your search query!")
-    return render_template("recipe.html", recipies=recipies)
+    return render_template("recipe.html", recipies=recipies, favourites=favourites)
 
 
 @app.route("/register", methods=["GET", "POST"])
