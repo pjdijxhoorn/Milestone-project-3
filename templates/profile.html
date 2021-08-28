@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="center"> {{ username }}'s profile</h1>
+<ul class="mini-menu">
+    <li><a href="#mailbox" class="btn submit-button mini-menu-item">Messages</a></li>
+    <li><a href="#user-recipes" class="btn submit-button mini-menu-item">My recipes</a></li>
+    <li><a href="#favourite-recipes" class="btn submit-button mini-menu-item">Favourite recipe</a></li>
+</ul>    
 
-<div class="mailbox">
+<div class="mailbox" id="mailbox">
     <h3 class="center">Messages</h3>
     <div class="innerbox">
         {%for message in messages%}
@@ -41,7 +46,7 @@
     </form>
 </div>
 
-<h1 class="center">{{ username }}'s recipes</h1>
+<h1 class="center" id="user-recipes">{{ username }}'s recipes</h1>
 <div class="row col-12 g-0">
     {%for recipe in userRecipe%}
     <div class="col-md-6 recipe-block g-0">
@@ -51,9 +56,10 @@
             <a href="{{ url_for('editRecipe', recipe_id=recipe._id) }}" class="btn submit-btn edit-btn">
                 <h6>Edit <i class="far fa-edit"></i></h6>
             </a>
-            <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn submit-btn remove-btn">
+            <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn submit-btn remove-btn ">
                 <h6>Delete <i class="far fa-trash-alt"></i></h6>
             </a>
+
         </div>
         <p> Type of dish: {{recipe.category_name}}</p>
         <h1>{{recipe.Name_dish}}</h1>
@@ -68,7 +74,7 @@
 </div>
 
 
-<h1 class="center">Favourite recipes</h1>
+<h1 class="center" id="favourite-recipes" >Favourite recipes</h1>
 
 <div class="row col-12 g-0">
     {%for recipe in recipies%}
@@ -116,6 +122,10 @@
             x.style.display = "none";
         }
     }
+
+    document.getElementById("deleteBTN").addEventListener("click", deleteBTN);
+
+    
 </script>
 
 {% endblock %}

@@ -74,11 +74,11 @@ And on top of that the site gives users the ability to send messages to each.
     - Underneath the personal recipes there is a favourites list here you can find all tyhe recipes that are marked on the recipe page. each one has a button to remove it from the list again.
 
 - ### login / register 
-    - form to login
-    - form to register
+    - on the login page you can find the form to login when you submit the form and the password and username are correct you will be redirected to the profile page the page with the main content for loged in users. this page contains a link to the register page for visitors that do not yet have a account.
+    - the register page has a form to register a account. this form has a check for double usernames and email adresses and has a password cconformation to make sure that users really have the password the want. this page has a link to the login page for visitors that already have a account.
 
 - ### add recipes
-    - add recipes
+    - As a user when logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe.
 
 - ### Future features
     - The users will be able to add more information about them self and see other users.
@@ -136,7 +136,8 @@ the
 
 ### know bugs
 
-- When
+- The intention was to use a full heart and empty heart icon for the favourite function beacuse these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the fontawesome styled sheets. therefor other icons are used for this function at the moment.
+- When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page.
 
 ## Deployment
 
