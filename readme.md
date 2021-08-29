@@ -1,9 +1,11 @@
 # BBQ with friends
 
-View the live project here. [link](https://bbq-with-friends.herokuapp.com/)
+View the live website here. [link](https://bbq-with-friends.herokuapp.com/)
 
 This is a website for finding, making, sharing and storing BBQ recipes. 
-And on top of that the site gives users the ability to send messages to each.
+On top of that the site gives users the ability to send messages to each other, 
+store favourite recipes and search for recipes. 
+
 
 
 ![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
@@ -23,8 +25,6 @@ And on top of that the site gives users the ability to send messages to each.
 
         1. As a Returning Visitor, I want to make and store recipes.
         2. As a Returning Visitor, I want to be able to edit and or delete my stored recipes.
-        3. As a Returning Visitor, 
-        4. As a Returning Visitor,
 
     -   #### Frequent User Goals
         1. As a Frequent User, I want to communicated with other users about recipes.
@@ -44,13 +44,15 @@ And on top of that the site gives users the ability to send messages to each.
         The font used is Architects Daughter this is a informal yet easy to read font. This styles well with the main theme of the site: BBQ.
         as back-up in the case Architects Daughter fails there is sans-serif.  
 
+        ![font.](static/images/font.PNG)
+
     -    ### Imagery
             A hero image is used on every page 
 
 
     -   ### Wireframes
 
-        - Wireframe for BBQ with Friends - [View]()
+        - Wireframe for BBQ with Friends - [View](static/pdf/wireframes.pdf)
 
 ## Features
 
@@ -70,6 +72,9 @@ And on top of that the site gives users the ability to send messages to each.
 
 - ### Recipes
     - On the recipe page all the recipes are displayed in small stylish cards. these cards are small so you can see more recipes at the same time. when clicked they redirect the user to a page where this recipe is displayed in full.
+
+    ![recipe functions.](static/images/single.PNG)
+
     - Above the recipes there is a search field and two buttons. The search button will search the database for recipes with the content of the search field when clicked. search parameters include. recipe name, ingredients, explanation and created by user. the reset button returns all the recipes.
     - When logged in as a user you can see a icon on the right upper corner this toggles the recipe to the  favourites these recipes are displayed on the profile page.
 
@@ -91,16 +96,16 @@ And on top of that the site gives users the ability to send messages to each.
 - ### Login / Register 
     - on the login page you can find the form to login when you submit the form and the password and username are correct you will be redirected to the profile page the page with the main content for loged in users. this page contains a link to the register page for visitors that do not yet have a account.
 
-    ![profile functions.](static/images/login.PNG)  
+    ![login functions.](static/images/login.PNG)  
 
     - the register page has a form to register a account. this form has a check for double usernames and email adresses and has a password cconformation to make sure that users really have the password the want. this page has a link to the login page for visitors that already have a account.
 
-    ![profile functions.](static/images/register.PNG)  
+    ![register functions.](static/images/register.PNG)  
 
 - ### Add recipes
     - As a user when logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe.
 
-    ![profile functions.](static/images/addrecipe.PNG)  
+    ![add recipe functions.](static/images/addrecipe.PNG)  
 
 - ### Future features
     - The users will be able to add more information about them self and see other users.
