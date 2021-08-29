@@ -312,8 +312,13 @@ overflow: hidden;
 }
 
 .mini-menu-item{
-    color: white;
+    background-color: #A22C00;
     
+}
+
+.mini-menu-item a{
+    text-decoration: none;
+    color: white;
 }
 
 /*----------admin page*/
