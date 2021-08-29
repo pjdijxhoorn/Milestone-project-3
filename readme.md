@@ -60,25 +60,47 @@ And on top of that the site gives users the ability to send messages to each.
     - for computer users you can see a searchfield in the navbar so no matter what page they are on the can search for recipes, catogories, ingredients. this redirects to the recipe page.   
     - On every page you can see the hero image underneath the navbar. this has a zoomfunction to capture the attention of the users when they arrive on the pages.  
 
+    ![general functions.](static/images/general.PNG)
+
+
 - ### Home
     - The Home (index) screen shows a small explanation what the site is about to make sure that new users know what the site is about. beneath that the 3 newest recipe's will be displayed so that returning and frequent users can instantly see if there are any new recipes.
 
-- ### recipes
+    ![home functions.](static/images/home.PNG)
+
+- ### Recipes
     - On the recipe page all the recipes are displayed in small stylish cards. these cards are small so you can see more recipes at the same time. when clicked they redirect the user to a page where this recipe is displayed in full.
     - Above the recipes there is a search field and two buttons. The search button will search the database for recipes with the content of the search field when clicked. search parameters include. recipe name, ingredients, explanation and created by user. the reset button returns all the recipes.
     - When logged in as a user you can see a icon on the right upper corner this toggles the recipe to the  favourites these recipes are displayed on the profile page.
+
+    ![recipe functions.](static/images/recipepage.PNG)
         
-- ### profile
+- ### Profile
     - on the top of the profile page you can find a messaging system. this gives users the oppertunity to send messages to other users. messages can be deleted with a small delete button. 
+
+    ![profile functions.](static/images/profile1.PNG)
+
     - beneath the messages a user can see all the recipes that he/ she created. these recipes can be edited by clicking the edit button this will redirect to a new page were you can edit the recipe after submitting you will be redirected back. these recipes can be deleted aswell by clicking the delete button.
+
+    ![profile functions.](static/images/profile2.PNG)
+
     - Underneath the personal recipes there is a favourites list here you can find all tyhe recipes that are marked on the recipe page. each one has a button to remove it from the list again.
 
-- ### login / register 
+    ![profile functions.](static/images/profile3.PNG)    
+
+- ### Login / Register 
     - on the login page you can find the form to login when you submit the form and the password and username are correct you will be redirected to the profile page the page with the main content for loged in users. this page contains a link to the register page for visitors that do not yet have a account.
+
+    ![profile functions.](static/images/login.PNG)  
+
     - the register page has a form to register a account. this form has a check for double usernames and email adresses and has a password cconformation to make sure that users really have the password the want. this page has a link to the login page for visitors that already have a account.
 
-- ### add recipes
+    ![profile functions.](static/images/register.PNG)  
+
+- ### Add recipes
     - As a user when logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe.
+
+    ![profile functions.](static/images/addrecipe.PNG)  
 
 - ### Future features
     - The users will be able to add more information about them self and see other users.
@@ -156,13 +178,14 @@ the
 ## Code
 
 ### Content 
-    - content created by the users: admin and dijxkie is created by the site creator.
-    - all the other recipes are created by the other users of the site this includes the images used there. 
+
+- content created by the users: admin and dijxkie is created by the site creator.
+- all the other recipes are created by the other users of the site this includes the images used there. 
 
 ### images
     - the hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
-    it was a free photo made by rob
+    it was a free photo made by rob (no other name was given)
 
 ### Acknowledgements
 
-- - thanks to my great friends and family for populating the website with users and original recipes. 
+     - thanks to my great friends and family for populating the website with users and original recipes. 
