@@ -47,7 +47,7 @@ store favourite recipes and search for recipes.
         ![font.](static/images/font.PNG)
 
     -    ### Imagery
-            A hero image is used on every page 
+            A hero image is used on every page. 
 
 
     -   ### Wireframes
@@ -60,7 +60,8 @@ store favourite recipes and search for recipes.
 
     - The navigation bar is responsive for mobile phone users it shows a hamburger menu with all the same links as the big nav-bar. The buttons are interactive for the computer users when hovered over they give conformation by a small orange line beneath them.
     - for computer users you can see a searchfield in the navbar so no matter what page they are on the can search for recipes, catogories, ingredients. this redirects to the recipe page.   
-    - On every page you can see the hero image underneath the navbar. this has a zoomfunction to capture the attention of the users when they arrive on the pages.  
+    - On every page you can see the hero image underneath the navbar. this has a zoomfunction to capture the attention of the users when they arrive on the pages.
+    - all the pages have a message box that displays text when a important action was succesfull or when an error occurred.  
 
     ![general functions.](static/images/general.PNG)
 

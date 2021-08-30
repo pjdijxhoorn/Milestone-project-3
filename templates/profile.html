@@ -56,9 +56,14 @@
             <a href="{{ url_for('editRecipe', recipe_id=recipe._id) }}" class="btn submit-btn edit-btn">
                 <h6>Edit <i class="far fa-edit"></i></h6>
             </a>
-            <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn submit-btn remove-btn ">
-                <h6>Delete <i class="far fa-trash-alt"></i></h6>
+            
+                
+            <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn submit-btn remove-btn displaybtn">
+                <h6>delete <i class="far fa-trash-alt"></i></h6>
             </a>
+              
+            
+            
 
         </div>
         <p> Type of dish: {{recipe.category_name}}</p>
@@ -123,9 +128,6 @@
         }
     }
 
-    document.getElementById("deleteBTN").addEventListener("click", deleteBTN);
-
-    
 </script>
 
 {% endblock %}
