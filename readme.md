@@ -6,9 +6,23 @@ This is a website for finding, making, sharing and storing BBQ recipes.
 On top of that the site gives users the ability to send messages to each other, 
 store favourite recipes and search for recipes. 
 
-
-
 ![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
+
+## Table of contents
+1.[UX](#UX)
+
+2.[Features](#Features)
+
+3.[Technologies Used](#Technologies)
+
+4.[Testing](#Testing)
+
+5.[Deployment](#Deployment)
+
+6.[Credits](#Credits)
+
+7.[contact](#Contact)
+
 
 ## User Experience (UX)
 
@@ -178,7 +192,7 @@ The CSS was checked by direct input. no mistakes were found.
 ### know bugs
 
 - The intention was to use a full heart and empty heart icon for the favourite function beacuse these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the fontawesome styled sheets. therefor other icons are used for this function at the moment. *issue fixed*
-- When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page.
+- When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page. *issue fixed*
 
 ## Deployment
 
@@ -206,7 +220,7 @@ If your IDE has a clone function you can use the url provided after clicking cod
 
 ## Credits
 
-## Code
+### Code
 
 ### Content 
 
