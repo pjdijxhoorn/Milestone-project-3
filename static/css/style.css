@@ -163,7 +163,6 @@ body {
    justify-content: center;
     border-top: 1px solid rgba(255, 255,255, 0.5);
     border-left: 1px solid rgba(255, 255,255, 0.5);
-    backdrop-filter: blur(5px);
 }
 
 .cardBox .card .content{
@@ -235,7 +234,15 @@ overflow: hidden;
     
 }
     
-
+.after::before{
+    font-family: "Font Awesome 5 Free";
+   content: "\f004";
+   display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
+   font-weight: 900;
+    
+}
 
 @media only screen and (max-width: 768px) {
     .cardBox .card{

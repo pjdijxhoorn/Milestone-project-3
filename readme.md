@@ -138,10 +138,14 @@ store favourite recipes and search for recipes.
 the
 
 [W3C Markup Validator](https://validator.w3.org/)
+all pages were checked using the W3C markup validator. most pages were checked via url however 
+some you have to be logged in so these sites were checked by copying the code into the validator.
+none of the pages displayed errors. 
 ![alt text]()
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
-![alt text]()
+The CSS was checked by direct input. no mistakes were found. 
+![css validation](static/images/cssvalidation.PNG)
 
 [jshint javascript validator](https://jshint.com/)
 ![alt text]()
@@ -149,26 +153,47 @@ the
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
-    1. As
+    1. As a First Time Visitor, I would like to see what the site is about and how the site works. 
+        The expected first time visitors would be people  just looking for a good recipe. 
+    2. As a First Time Visitor, I want to find a good recipe.
+    3. As a First Time Visitor, i want to be able to easily navigate the site.
 
 
 -   #### Returning Visitor Goals
-    1. As
+    1. As a Returning Visitor, I want to make and store recipes.
+    2. As a Returning Visitor, I want to be able to edit and or delete my stored recipes.
 
 -   #### Frequent User Goals
-    1. As
+    1.As a Frequent User, I want to communicated with other users about recipes.
+            the expected frequent Users  would be people wanting to part of the culture of the website
+    2. As a Frequent User, I want to see the latest recipes added.
+    3. As a Frequent User, I want to be able to make a list of favourite recipes.
 
 ### Further Testing
 
-- The
+- The website was tested on Google Chrome and on Edge. 
+- The website was tested with all the pages for the responsiveness on phone ipad and computer and also on devtools in chrome for the same thing.
+- The website was tested by several people on different devices to see if the links and functions were working.
 
 ### know bugs
 
-- The intention was to use a full heart and empty heart icon for the favourite function beacuse these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the fontawesome styled sheets. therefor other icons are used for this function at the moment.
+- The intention was to use a full heart and empty heart icon for the favourite function beacuse these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the fontawesome styled sheets. therefor other icons are used for this function at the moment. *issue fixed*
 - When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page.
 
 ## Deployment
 
+to run this project on your own IDE you can follow the instructions below:
+
+### instructions
+
+1. Make a clone of the github repository [link](https://github.com/pjdijxhoorn/Milestone-project-3). 
+If your IDE has a clone function you can use the url provided after clicking code. Else download the zip file and extract this to your chosen folder. alternatif if you have Git installed you can clone the repository with the following command.
+
+        git clone https://https://github.com/pjdijxhoorn/Milestone-project-3
+
+2. openm your IDE, open a terminal un the unzip folder or cd the correct location.
+
+3. A
 ### GitHub Pages
 
 
@@ -185,13 +210,18 @@ the
 
 ### Content 
 
-- content created by the users: admin and dijxkie is created by the site creator.
-- all the other recipes are created by the other users of the site this includes the images used there. 
+- Content created by the users: admin and dijxkie is created by the site creator.
+- All the other recipes are created by the other users of the site this includes the images used there. 
 
 ### images
-    - the hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
-    it was a free photo made by rob (no other name was given)
+    - The hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
+    it was a free photo made by rob (no other name was given).
 
 ### Acknowledgements
 
-     - thanks to my great friends and family for populating the website with users and original recipes. 
+     - Thanks to my great friends and family for populating the website with users and original recipes.
+     - Special thanks to my mentor for being so inspirational and helpfull.
+
+## Contact
+
+feel free to contact me at pjdijxhoorn(at)hotmail(dot)com

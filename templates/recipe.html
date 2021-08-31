@@ -29,9 +29,9 @@
                 
                         <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
                             {% if recipe._id|string in favourites %}
-                            <i class="far fa-times-circle"></i>   
+                            <i class="fas fa-heart before"></i>
                             {% else %}
-                                <i class="far fa-plus-square"></i>
+                            <i class="far fa-heart after"></i>
                             {% endif %}  
                         </a> 
                 {% endif %}
