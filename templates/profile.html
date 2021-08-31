@@ -91,7 +91,7 @@
                     <p class="col-9">Recipe by: {{recipe.created_by}}</p>
                    
                     
-                            <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
+                            <a href="{{ url_for('favourites', recipe_id=recipe._id) }}" class="favourite col-3 ">
                                 <i class="far fa-trash-alt"></i>
                             </a> 
                    

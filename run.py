@@ -295,6 +295,28 @@ def favourite(recipe_id):
          mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
     return redirect (url_for("recipe", recipe=recipe, username=username, favourites=favourites ))
 
+@app.route("/favourites/<recipe_id>", methods=["GET", "POST"])
+def favourites(recipe_id):
+    recipe = mongo.db.recipies.find(
+        {"_id": ObjectId(recipe_id)})
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    user = mongo.db.users.find_one({"username": session["user"],"favourites": recipe_id})
+    try:
+        favourites = user.get("favourites")
+    except: 
+        favourites = []
+   
+
+    if recipe_id in favourites:
+         mongo.db.users.update({"username": session["user"]},{"$pull":{"favourites": recipe_id}})
+    else:
+         mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
+    return redirect (url_for("profile", recipe=recipe, username=username, favourites=favourites ))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),

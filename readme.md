@@ -154,7 +154,7 @@ The CSS was checked by direct input. no mistakes were found.
 
 -   #### First Time Visitor Goals
     1. As a First Time Visitor, I would like to see what the site is about and how the site works. 
-        The expected first time visitors would be people  just looking for a good recipe. 
+    The expected first time visitors would be people  just looking for a good recipe. 
     2. As a First Time Visitor, I want to find a good recipe.
     3. As a First Time Visitor, i want to be able to easily navigate the site.
 
@@ -164,7 +164,7 @@ The CSS was checked by direct input. no mistakes were found.
     2. As a Returning Visitor, I want to be able to edit and or delete my stored recipes.
 
 -   #### Frequent User Goals
-    1.As a Frequent User, I want to communicated with other users about recipes.
+    1. As a Frequent User, I want to communicated with other users about recipes.
             the expected frequent Users  would be people wanting to part of the culture of the website
     2. As a Frequent User, I want to see the latest recipes added.
     3. As a Frequent User, I want to be able to make a list of favourite recipes.
