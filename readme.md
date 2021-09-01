@@ -9,19 +9,13 @@ store favourite recipes and search for recipes.
 ![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
 
 ## Table of contents
-1.[UX](#UX)
-
-2.[Features](#Features)
-
-3.[Technologies Used](#Technologies)
-
-4.[Testing](#Testing)
-
-5.[Deployment](#Deployment)
-
-6.[Credits](#Credits)
-
-7.[contact](#Contact)
+1. [UX](#UX)
+2. [Features](#Features)
+3. [Technologies Used](#Technologies)
+4. [Testing](#Testing)
+5. [Deployment](#Deployment)
+6. [Credits](#Credits)
+7. [contact](#Contact)
 
 
 ## User Experience (UX)

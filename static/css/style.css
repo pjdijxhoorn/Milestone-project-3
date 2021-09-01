@@ -56,6 +56,12 @@ body {
 
 .nav-item a {
     color: white;
+    
+}
+
+.nav-item a:hover {
+    color: white;
+    
 }
 
 .search-btn {
@@ -275,6 +281,10 @@ overflow: hidden;
 .base-btn {
     color: white;
     background-color: #A22C00;
+    text-decoration: none;
+}
+.base-btn:hover{
+    color: white;
 }
 
 /*----------profile page*/
@@ -284,6 +294,7 @@ overflow: hidden;
     color: white;
     text-decoration: none;
     width: 100px;
+    background-color: #A22C00;
 }
 
 .edit-btn i,
@@ -371,4 +382,11 @@ footer {
 .footer-content{
     padding-top: 20px;
 }
+
+.modals{
+    color: black;
+}
+
+
+
 
