@@ -139,13 +139,22 @@ def login():
 def profile(username):
     #grab the session user's username from db
     if request.method == "POST":
-        message = {
-            "created_by": session["user"],
-            "for": request.form.get("for"),
-            "messages": request.form.get("mail")}
+
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("for").lower()})
+
+        if existing_user:
+            message = {
+                "created_by": session["user"],
+                "for": request.form.get("for"),
+                "messages": request.form.get("mail")}
     
-        mongo.db.messages.insert_one(message)
-        flash("Message send")
+            mongo.db.messages.insert_one(message)
+            flash("Message send")
+
+        else:
+            flash("no such user")   
+
         return redirect (url_for("profile", username=session["user"]))
 
     username = mongo.db.users.find_one(

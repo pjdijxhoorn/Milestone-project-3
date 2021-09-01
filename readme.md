@@ -187,6 +187,7 @@ The CSS was checked by direct input. no mistakes were found.
 
 - The intention was to use a full heart and empty heart icon for the favourite function beacuse these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the fontawesome styled sheets. therefor other icons are used for this function at the moment. *issue fixed*
 - When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page. *issue fixed*
+- The suggestion list for the users in the messages system doesn't display all the users and displays a users that is deleted allready.
 
 ## Deployment
 
