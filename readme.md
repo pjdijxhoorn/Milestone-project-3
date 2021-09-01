@@ -90,11 +90,11 @@ store favourite recipes and search for recipes.
     ![recipe functions.](static/images/recipepage.PNG)
         
 - ### Profile
-    - on the top of the profile page you can find a messaging system. this gives users the oppertunity to send messages to other users. messages can be deleted with a small delete button. 
+    - on the top of the profile page you can find a messaging system. this gives users the oppertunity to send messages to other users. When sending messages  you get a suggestion field for other users in your input field. messages can be deleted with a small delete button here you will be directed to a modal were you can confirm to delete. 
 
     ![profile functions.](static/images/profile1.PNG)
 
-    - beneath the messages a user can see all the recipes that he/ she created. these recipes can be edited by clicking the edit button this will redirect to a new page were you can edit the recipe after submitting you will be redirected back. these recipes can be deleted aswell by clicking the delete button.
+    - beneath the messages a user can see all the recipes that he/ she created. these recipes can be edited by clicking the edit button this will redirect to a new page were you can edit the recipe after submitting you will be redirected back. these recipes can be deleted aswell by clicking the delete button which will direct you to a modal here you can confirm the deletion.
 
     ![profile functions.](static/images/profile2.PNG)
 

@@ -47,7 +47,7 @@
 
 
 
-        {% endfor%}
+        {% endfor %}
     </div>
 </div>
 <div class="sendbox">
@@ -56,8 +56,17 @@
         <!--input msgReciever-->
         <div class="col-md-6">
             <label for="for" class="form-label">To:</label>
-            <input type="text" class="form-control" id="for" name="for" placeholder="Make sure to use the correct username else the message will not arrive" required>
+            <input type="text" class="form-control" id="for" name="for" list="suggestions" placeholder="Make sure to use the correct username else the message will not arrive" required>
         </div>
+
+        
+        <datalist id="suggestions">
+            {%for user in users%}
+            <option value="{{user.username}}">
+                {% endfor %}
+        </datalist>
+
+
 
         <!--input mail-->
         <div class="col-md-12">
