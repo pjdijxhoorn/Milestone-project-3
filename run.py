@@ -140,6 +140,8 @@ def profile(username):
     #grab the session user's username from db
     if request.method == "POST":
 
+        
+
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("for").lower()})
 
@@ -178,9 +180,10 @@ def profile(username):
         username = []    
 
     recipies = mongo.db.recipies.find()
-    
+    users = mongo.db.users.find()
     if session["user"]:
-        return render_template("profile.html", username=username, userRecipe=userRecipe, messages=messages, recipies=recipies, favourites=favourites)
+        return render_template("profile.html", username=username, 
+        userRecipe=userRecipe, messages=messages, recipies=recipies, favourites=favourites, users=users)
     return redirect (url_for("login"))
 
 @app.route("/logout")

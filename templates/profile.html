@@ -61,9 +61,9 @@
 
         
         <datalist id="suggestions">
-            {%for user in users%}
-            <option value="{{user.username}}">
-                {% endfor %}
+            {% for user in users %}
+                <option value="{{user.username}}">
+            {% endfor %}
         </datalist>
 
 
