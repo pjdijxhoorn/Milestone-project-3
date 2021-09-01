@@ -7,11 +7,22 @@ body {
     color: whitesmoke;
 }
 
-/*----------Colors*/
+/*----------central themes*/
 .center {
     text-align: center;
 }
 
+.base-btn {
+    color: white;
+    background-color: #A22C00;
+    text-decoration: none;
+}
+.base-btn:hover{
+    color: white;
+}
+p{
+    font-size: large;
+}
 
 /*----------messages*/
 
@@ -73,8 +84,13 @@ body {
 }
 
 .hvr-underline-reveal:before {
-    background: #A22C00;
+    background-color: #A22C00;    
 }
+
+#searchfield {
+    margin: 5px;
+}
+
 /*----------hero image*/
 #hero-outer{
     height:400px;
@@ -139,8 +155,10 @@ body {
         height:300px;
         
     }}
-
-
+/*----------home page*/
+    .explanation-site{
+        padding: 15px;
+    }
 
 /*----------recipe page*/
 
@@ -250,17 +268,18 @@ overflow: hidden;
     
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 414px) and (min-width: 10px) {
+    .cardBox .card{
+        width: 275px;
+        height: 600px;
+    }}
+
+@media only screen and (max-width: 768px)  and (min-width: 414px){
     .cardBox .card{
         width: 350px;
     }}
 
-.full-heart::before{
-    color: #fff;
-}
-.full-heart::after{
-    color: red;
-}
+
 
 
 
@@ -284,6 +303,10 @@ overflow: hidden;
     text-decoration: none;
 }
 .base-btn:hover{
+    color: white;
+}
+
+.form-text{
     color: white;
 }
 
@@ -331,6 +354,7 @@ overflow: hidden;
 
 .mini-menu-item{
     background-color: #A22C00;
+    margin: 5px;
     
 }
 
@@ -360,6 +384,12 @@ overflow: hidden;
 .addRecipiesForm{
     padding: 20px;
 }
+
+/*----------edit recipies page*/
+.form-edit-recipe{
+    padding: 20px;
+}
+
 /*----------single recipe page*/
 .recipe-block{
     border: 2px solid #A22C00;
@@ -384,12 +414,12 @@ footer {
     background-color: black;
     border-top:2px solid #A22C00;
     border-top-style: outset;
+    width: 100%;
 }
 
 .footer-content{
     padding-top: 20px;
 }
-
 
 
 

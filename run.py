@@ -225,7 +225,7 @@ def editRecipe(recipe_id):
             "created_by": session["user"]
         }
         mongo.db.recipies.update({"_id": ObjectId(recipe_id)}, editedRecipe)
-        flash("Recipe Successfully edited")
+        flash("Recipe Successfully saved")
     
     recipe = mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)

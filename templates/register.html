@@ -7,28 +7,25 @@
           <!--Email-->
         <div>
           <label for="email" class="form-label">Email address</label>
-          <input type="email" name="email" class="form-control" id="email" aria-describedby="email" >
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <input type="email" name="email" class="form-control" id="email" aria-describedby="email"  
+          placeholder="We'll never share your email with anyone else.">
         </div>
         <!--Username-->
         <div>
             <label for="username" class="form-label">Username</label>
             <input type="text" name="username" class="form-control validate" id="username" aria-describedby="username"
-              minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  required>
-            <div class="form-text"> Your Username should between 5 and 15 characters long and made up of letters and / or numbers.</div>
+              minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  placeholder="Usernames should be  5-15 characters long and made up of letters and/ or numbers." required>
           </div>
           <!--Password-->
         <div>
           <label for="password" class="form-label">Password</label>
           <input type="password" name="password" class="form-control validate" id="password" 
-            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  required>
-          <div class="form-text">Your password should between 5 and 15 characters long and made up of letters and numbers.</div>
+            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  placeholder="passwords should be 5-15 characters long and made up of letters and numbers." required>
         </div>
         <!--Password confirm-->
         <div>
             <label for="passwordconfirm" class="form-label">Confirm password</label>
-            <input type="password" name="passwordconfirm" class="form-control" id="passwordconfirm">
-            <div class="form-text">Typ your password again to check.</div>
+            <input type="password" name="passwordconfirm" class="form-control" id="passwordconfirm" placeholder="Typ your password again to check.">
           </div>
         <button type="submit" class="btn submit-btn">Submit</button>
     </div>

@@ -121,7 +121,8 @@ store favourite recipes and search for recipes.
     - A forum or message board to have group disscusions and conversations so that a community can form 
     - Password recovery 
     - Registration conformation with email
-    - On the profile page in the messages. messages send will be seen aswell and will be displayed more like a conversation (like whatsapp). 
+    - On the profile page in the messages. messages send will be seen aswell and will be displayed more like a conversation (like whatsapp).
+    - Recipe explanation can be structured into steps. instead of a text area. 
         
 
 ## Technologies Used
@@ -225,6 +226,7 @@ If your IDE has a clone function you can use the url provided after clicking cod
 ### images
     - The hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
     it was a free photo made by rob (no other name was given).
+    - photo smores recipe by Jessica Ruscello on Unsplash
 
 ### Acknowledgements
 
