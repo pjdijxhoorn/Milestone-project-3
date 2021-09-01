@@ -4,7 +4,7 @@
 <ul class="mini-menu center">
     <li class="btn submit-button base-btn mini-menu-item"><a href="#mailbox" >Messages</a></li>
     <li class="btn submit-button base-btn mini-menu-item"><a href="#user-recipes" >My recipes</a></li>
-    <li class="btn submit-button base-btn mini-menu-item"><a href="#favourite-recipes">Favourite recipe</a></li>
+    <li class="btn submit-button base-btn mini-menu-item"><a href="#favourite-recipes">Favourite recipes</a></li>
 </ul>    
 
 <div class="mailbox" id="mailbox">
@@ -16,10 +16,36 @@
 
             <p class="messages">Message: {{message.messages}}</p>
 
-            <a href="{{ url_for('deletemessage', message_id=message._id) }}" class="btn submit-btn base-btn remove-btn center">
-                <h6>Delete <i class="far fa-trash-alt"></i></h6>
-            </a>  
+             <!-- Button trigger modal -->
+         <button type="button" class="btn base-btn deletemessage" data-bs-toggle="modal" data-bs-target="#test{{message._id}}">
+            <i class="far fa-trash-alt"> Delete</i>
+        </button>
         </div>
+
+        
+
+<!-- Modal -->
+<div class="modal fade" id="test{{message._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title modals" id="exampleModalLabel">Delete recipe</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body modals">
+        <p>Are you sure you want to delete this message: {{message.messages}} <br>from: {{message.created_by}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <a href="{{ url_for('deletemessage', message_id=message._id) }}" class="btn submit-btn base-btn remove-btn center">
+        <h6>Delete <i class="far fa-trash-alt"></i></h6>
+    </a>  
+    </div>
+  </div>
+</div>
+</div>
+
+
 
         {% endfor%}
     </div>

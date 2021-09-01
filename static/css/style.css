@@ -339,6 +339,13 @@ overflow: hidden;
     color: white;
 }
 
+.modals{
+    color: black;
+}
+
+.deletemessage{
+    margin: 20px;
+}
 
 /*----------admin page*/
 
@@ -383,9 +390,7 @@ footer {
     padding-top: 20px;
 }
 
-.modals{
-    color: black;
-}
+
 
 
 
