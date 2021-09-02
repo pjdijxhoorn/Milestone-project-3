@@ -34,7 +34,7 @@
 
     <!--input photo link-->
     <div class="col-md-6 g-3">
-        <label for="Photo_link" class="form-label">Photo link </label>
+        <label for="Photo_link" class="form-label">Photo url </label>
         <input type="text" class="form-control" id="Photo_link" name="Photo_link" value="{{recipe.Photo_link}}">
     </div>
 
@@ -53,7 +53,7 @@
     <!--input Other_requirments-->
     <label for="Other_requirments" class="form-label">What else do you need?</label>
     <div class="input-group">
-        <textarea id="Other_requirments" rows="4" class="form-control" aria-label="With textarea" name="Other_requirments" required>{{-recipe.Other_requirments-}}</textarea>
+        <textarea id="Other_requirments" rows="4" class="form-control" aria-label="With textarea" name="Other_requirments" >{{-recipe.Other_requirments-}}</textarea>
     </div>
 
     <!--input add button-->
@@ -64,19 +64,5 @@
     </div>
 </form>
 
-<script>
-    document.getElementById("navMenu").style.display = "none";
-
-    document.getElementById("nav-btn").addEventListener("click", navBarToggle);
-
-    function navBarToggle() {
-        var x = document.getElementById("navMenu");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
-
 {% endblock %}
+

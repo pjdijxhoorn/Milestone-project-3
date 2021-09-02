@@ -3,8 +3,10 @@
 View the live website here. [link](https://bbq-with-friends.herokuapp.com/)
 
 This is a website for finding, making, sharing and storing BBQ recipes. 
-On top of that the site gives users the ability to send messages to each other, 
-store favourite recipes and search for recipes. 
+On top of that the site gives users the ability to interact with each other by sending messages to each other. 
+to make it easier to find back those great recipies  you can store your favourite recipes.
+the website is designed to work on phone tablet and pc. The website isn't designed with a particuliar device in mind. However searching and storing is most handy on pc because you can oversee all the recipes better.
+when you are BBQ-ing you don't want to drag a pc around because of this the website is made in a way so you can see the recipies in full screen on tablet and phone.
 
 ![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
 
@@ -27,7 +29,7 @@ store favourite recipes and search for recipes.
         1. As a First Time Visitor, I would like to see what the site is about and how the site works. 
            The expected first time visitors would be people  just looking for a good recipe. 
         2. As a First Time Visitor, I want to find a good recipe.
-        3. As a First Time Visitor, i want to be able to easily navigate the site.
+        3. As a First Time Visitor, I want to be able to easily navigate the site.
 
     -   #### Returning Visitor Goals
 
@@ -90,7 +92,7 @@ store favourite recipes and search for recipes.
     ![recipe functions.](static/images/recipepage.PNG)
         
 - ### Profile
-    - on the top of the profile page you can find a messaging system. this gives users the oppertunity to send messages to other users. When sending messages  you get a suggestion field for other users in your input field. messages can be deleted with a small delete button here you will be directed to a modal were you can confirm to delete. 
+    - on the top of the profile page you can find a messaging system. this gives users the oppertunity to send messages to other users. When sending messages  you get a suggestion field for other users in your input field.  this is build with a datalist. This will be a good option for when the website grows and there are a lot of users. Messages can be deleted with a small delete button here you will be directed to a modal were you can confirm to delete. 
 
     ![profile functions.](static/images/profile1.PNG)
 
@@ -112,7 +114,7 @@ store favourite recipes and search for recipes.
     ![register functions.](static/images/register.PNG)  
 
 - ### Add recipes
-    - As a user when logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe.
+    - As a user when logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe. Adding photos is done by url next block we will learn about how to add photo's in other ways. 
 
     ![add recipe functions.](static/images/addrecipe.PNG)  
 
@@ -121,7 +123,7 @@ store favourite recipes and search for recipes.
     - A forum or message board to have group disscusions and conversations so that a community can form 
     - Password recovery 
     - Registration conformation with email
-    - On the profile page in the messages. messages send will be seen aswell and will be displayed more like a conversation (like whatsapp).
+    - On the profile page in the messages. Messages send will be seen aswell and will be displayed more like a conversation (like whatsapp).
     - Recipe explanation can be structured into steps. instead of a text area. 
         
 
@@ -163,20 +165,41 @@ The CSS was checked by direct input. no mistakes were found.
 
 -   #### First Time Visitor Goals
     1. As a First Time Visitor, I would like to see what the site is about and how the site works. 
-    The expected first time visitors would be people  just looking for a good recipe. 
+        The expected first time visitors would be people  just looking for a good recipe. 
+
+        1. On the home page there is a small explanation what the site is about. It is also in de banner in the hero-image. the buttons and nav-bar lead the way for the rest of the functions. These use familiar icons and titles to direct the users to the content.
+
     2. As a First Time Visitor, I want to find a good recipe.
-    3. As a First Time Visitor, i want to be able to easily navigate the site.
+        
+        2. On the recipe page you can search for recipes if you want to find something specific else you can see all the recipies there. accesable for everbody 
+
+    3. As a First Time Visitor, I want to be able to easily navigate the site.
+
+        3. To make sure that users can navigate the site with ease a sticky navbar is made so users can go to any part of the website with just 1 click. The navbar will fold and show a hamburger menu on smaller screens. 
 
 
 -   #### Returning Visitor Goals
     1. As a Returning Visitor, I want to make and store recipes.
+
+        1. After logging in you can add recipes by going to The add recipe menu button. here you will find a form to make a recipe. all the users own recipes will be stored on their profile page.
+
     2. As a Returning Visitor, I want to be able to edit and or delete my stored recipes.
+
+        2. after you made a recipe you can edit or delete it from your profile page where all your recipes are stored.
 
 -   #### Frequent User Goals
     1. As a Frequent User, I want to communicated with other users about recipes.
-            the expected frequent Users  would be people wanting to part of the culture of the website
+        The expected frequent Users  would be people wanting to part of the culture of the website
+
+        1. The website has a message system in the profile page you can look at recieved messages and make and send a message yourself.
+
     2. As a Frequent User, I want to see the latest recipes added.
+
+        2. On the home page of the website you can see the 3 latest recipes added to the website. this also stimulates people to add recipes
+
     3. As a Frequent User, I want to be able to make a list of favourite recipes.
+
+        3. When logged in you can see a heart icon in the corner of the recipes on the recipe page when clicked these will be stored on your profile page. these can be removed form your favourites list by clicking the icon on the recipe page again or the icon on the profile page.
 
 ### Further Testing
 

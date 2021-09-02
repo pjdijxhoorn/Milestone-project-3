@@ -51,12 +51,12 @@
     </div>
 </div>
 <div class="sendbox">
-    <form class="row g-3" method="POST" action="{{ url_for('profile', username=session['user']) }}">
+    <form class="row g-3" method="POST" action="{{ url_for('profile', username=session['user']) }}" autocomplete="off">
 
         <!--input msgReciever-->
         <div class="col-md-6">
             <label for="for" class="form-label">To:</label>
-            <input type="text" class="form-control" id="for" name="for" list="suggestions" placeholder="Make sure to use the correct username else the message will not arrive" required>
+            <input type="text" class="form-control" id="for" name="for" list="suggestions" placeholder="Make sure to use the correct username else the message will not arrive" autocomplete="off" required>
         </div>
 
         
@@ -168,25 +168,7 @@
     {% endfor%}
 </div>
 
-
-<!-- bug fix  how to get this code from navbar js via the base template?? -->
-<!-- bug fix  how to get this code from navbar js via the base template?? -->
-<!-- bug fix  how to get this code from navbar js via the base template?? -->
-<script>
-    document.getElementById("navMenu").style.display = "none";
-
-    document.getElementById("nav-btn").addEventListener("click", navBarToggle);
-
-    function navBarToggle() {
-        var x = document.getElementById("navMenu");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-</script>
-
-
 {% endblock %}
+
+
+
