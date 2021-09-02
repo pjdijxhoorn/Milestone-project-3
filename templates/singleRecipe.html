@@ -6,7 +6,7 @@
     <div class="col-12 recipe-block">
         <div class="col-12">
             <p> Type of dish: {{recipe.category_name}}</p>
-            <h1>{{recipe.Name_dish}}<br></h1>
+            <h2>{{recipe.Name_dish}}<br></h2>
             <p>recipe by: {{recipe.created_by}}</p>
         </div>
         <div class="row g-0">
@@ -21,7 +21,7 @@
                 <i class="fas fa-clipboard-list"></i> {{recipe.explanation}}<br>
             </div>
         </div>
-    {% endfor%}
+        {% endfor%}
     </div>
 </div>
 {% endblock %}

@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="text-center">Recipes</h1>
+<h2 class="text-center">Recipes</h2>
 
+<!-- Search Field -->
 <div class="row center col-12 g-0 search-block">
     <form action="{{ url_for('search') }}" method="post">
         <div class="center-align">
@@ -9,52 +10,47 @@
                 <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search recipes" required>
                 <br>
                 <button type="submit" class="btn base-btn">
-                    <i class="fas fa-search left"></i> Search
+                    <i class="fas fa-search left">Search</i>
                 </button>
                 <a href="{{ url_for('recipe') }}" class="btn base-btn">Reset</a>
             </div>
-
         </div>
     </form>
 </div>
 
+<!-- All the recipe-cards -->
 <div class="cardBox row col-12 g-0" id="cardbox">
     {%for recipe in recipies%}
-    
     <div class="card col-sm-12 col-md-6 col-lg-4 g-0">
         <div class="content">
             <div class="col-12 row g-0 row justify-content-between">
                 <p class="col-9">Recipe by: {{recipe.created_by}}</p>
                 {% if session.user%}
-                
-                        <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
-                            {% if recipe._id|string in favourites %}
-                            <i class="far fa-heart after"></i>
-                            {% else %}
-                            <i class="fas fa-heart before"></i>
-                            {% endif %}  
-                        </a> 
+                <a href="{{ url_for('favourite', recipe_id=recipe._id) }}" class="favourite col-3 ">
+                    {% if recipe._id|string in favourites %}
+                    <i class="far fa-heart after"></i>
+                    {% else %}
+                    <i class="fas fa-heart before"></i>
+                    {% endif %}
+                </a>
                 {% endif %}
-                
-                </div>
+            </div>
             <h3 class="center">{{recipe.Name_dish}}</h3>
-            
             <div class="photobox col-12 center center-align">
                 <img class="recipe-photo col-6 center center-align" src="{{recipe.Photo_link}}" alt="recipe photo">
             </div>
             <br>
-             <p><i class="fas fa-clock"></i>  {{recipe.preperation_time}}</p>
-             <p class="ingredients-list"><i class="fas fa-plus-circle"></i>  {{recipe.ingredients}}</p>
-        
+            <p><i class="fas fa-clock"></i> {{recipe.preperation_time}}</p>
+            <p class="ingredients-list"><i class="fas fa-plus-circle"></i> {{recipe.ingredients}}</p>
             <div class="cardlink col-12 center center-align">
                 <a href="{{ url_for('singleRecipe', recipe_id=recipe._id) }}" class="cardlink">
-                Click here to see full recipe
+                    Click here to see full recipe
                 </a>
-            </div> 
+            </div>
         </div>
     </div>
 
     {% endfor%}
 </div>
 
-{% endblock %} 
+{% endblock %}

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="text-center">Admin page</h1>
+<h2 class="text-center">Admin page</h2>
 
-<h3 class="center">add a category</h3>
+<h3 class="center">Add a category</h3>
 <div class="row g-0">
     <div class="col-12 center">
         <a href="{{ url_for('addCategory')}}" class="btn base-btn">Add category</a>
@@ -12,7 +12,7 @@
 
 <h3 class="center">categories edit</h3>
 
-<div class="col-12  center g-0" >
+<div class="col-12  center g-0">
     {%for category in categories%}
     <div class="categorycard center-align col-12">
         <div class="card-body categories">

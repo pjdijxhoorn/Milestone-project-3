@@ -1,60 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="text-center">Add a recipe</h1>
+<h2 class="text-center">Add a recipe</h2>
 
+<form class="row g-3 addRecipiesForm col-12" method="POST" action="{{ url_for('addRecipies') }}">
 
-    <form class="row g-3 addRecipiesForm col-12" method="POST" action="{{ url_for('addRecipies') }}">
+    <!--input Recipe Name-->
+    <div class="col-md-6">
+        <label for="Name_dish" class="form-label">Recipe Name:</label>
+        <input type="text" class="form-control" id="Name_dish" name="Name_dish" maxlength="25" placeholder="max 25 letters" required>
+    </div>
 
-      <!--input Recipe Name-->
-        <div class="col-md-6">
-          <label for="Name_dish" class="form-label">Recipe Name:</label>
-          <input type="text" class="form-control" id="Name_dish" name="Name_dish" maxlength="25" placeholder="max 25 letters" required>
-        </div>
-      
-        <!--input select category-->
-        <div class="col-md-6">
-            <label for="category_name" class="form-label">What kind of dish is it?</label>
-            <select id="category_name" name="category_name" class="form-select" required>
-              <option value="" disabled selected>Choose the sort of dish</option>
-              {% for category in categories %}
-                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-              {% endfor %}   
-            </select>
-          </div>
+    <!--input select category-->
+    <div class="col-md-6">
+        <label for="category_name" class="form-label">What kind of dish is it?</label>
+        <select id="category_name" name="category_name" class="form-select" required>
+            <option value="" disabled selected>Choose the sort of dish</option>
+            {% for category in categories %}
+            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-         <!--input Recipe preperation time-->
-            <div class="col-md-6">
-              <label for="preperation_time" class="form-label">How long does it take to prepare?:</label>
-              <input type="text" class="form-control" id="preperation_time" name="preperation_time" required>
-            </div>
+    <!--input Recipe preperation time-->
+    <div class="col-md-6">
+        <label for="preperation_time" class="form-label">How long does it take to prepare?:</label>
+        <input type="text" class="form-control" id="preperation_time" name="preperation_time" required>
+    </div>
 
-          <!--input photo link-->  
-            <div class="col-md-6">
-              <label for="Photo_link" class="form-label">Photo url</label>
-              <input type="text" class="form-control" id="Photo_link" name="Photo_link">
-            </div>
-            
-            <!--input Recipe ingredients-->
-            <label for="ingredients" class="form-label">What Ingredients do you need?</label>
-            <div class="input-group">
-            <textarea id="ingredients" class="form-control" aria-label="With textarea" name="ingredients" required></textarea>
-          </div>
+    <!--input photo link-->
+    <div class="col-md-6">
+        <label for="Photo_link" class="form-label">Photo url</label>
+        <input type="text" class="form-control" id="Photo_link" name="Photo_link">
+    </div>
 
-            <!--input explanation-->
-          <label for="explanation" class="form-label">What are the steps to create your masterpiece?</label>
-            <div class="input-group">
-            <textarea id="explanation" class="form-control" aria-label="With textarea" name="explanation" required></textarea>
-          </div>
+    <!--input Recipe ingredients-->
+    <label for="ingredients" class="form-label">What Ingredients do you need?</label>
+    <div class="input-group">
+        <textarea id="ingredients" class="form-control" aria-label="With textarea" name="ingredients" required></textarea>
+    </div>
 
-            <!--input Other_requirments-->
-            <label for="Other_requirments" class="form-label">What else do you need?</label>
-            <div class="input-group">
-            <textarea id="Other_requirments" class="form-control" aria-label="With textarea" name="Other_requirments"></textarea>
-          </div>
+    <!--input explanation-->
+    <label for="explanation" class="form-label">What are the steps to create your masterpiece?</label>
+    <div class="input-group">
+        <textarea id="explanation" class="form-control" aria-label="With textarea" name="explanation" required></textarea>
+    </div>
 
-          <!--input add button-->
-        <div class="col-12">
-          <button type="submit" class="btn submit-btn">Add recipe <i class="fas fa-folder-plus"></i></button>
-        </div>
-      </form>
+    <!--input Other_requirments-->
+    <label for="Other_requirments" class="form-label">What else do you need?</label>
+    <div class="input-group">
+        <textarea id="Other_requirments" class="form-control" aria-label="With textarea" name="Other_requirments"></textarea>
+    </div>
+
+    <!--input add button-->
+    <div class="col-12">
+        <button type="submit" class="btn submit-btn">Add recipe <i class="fas fa-folder-plus"></i></button>
+    </div>
+</form>
 {% endblock %}

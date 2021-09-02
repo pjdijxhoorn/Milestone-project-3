@@ -9,22 +9,15 @@
     <meta name="keywords" content="BBQ, Meat-lovers, Meat, Cooking, outside, friends">
     <meta name="author" content="Paul Dijxhoorn">
 
+    <!--links, libraries and scripts-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!--links, libraries and scripts-->
     <script src="https://kit.fontawesome.com/bd7115edaf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="../static/css/style.css" type="text/css" />
 
-    <!--links, libraries and scripts-->
+    <!--Icon Tab-->
     <link rel="icon" type="image/png" href="static/images/favicon.png">
-
-
-  
-    
-
-
     {% block styles %}
     {% endblock %}
     <title>BBQ wit Friends</title>
@@ -33,8 +26,6 @@
 <body>
 
     <!--Nav-bar-->
-
-    
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
         <div class="container col-12">
             <div class="logo-block">
@@ -49,12 +40,12 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
 
-                <form action="{{ url_for('search') }}" method="post" class="col s12" >
-                    <div class=" center-align" >
+                <form action="{{ url_for('search') }}" method="post" class="col s12">
+                    <div class=" center-align">
                         <div class="input-field col-12 center" id="searchfield">
 
-                            <input   type="text" name="query" minlength="3" class="validate" placeholder="Search recipes" required>
-                            
+                            <input type="text" name="query" minlength="3" class="validate" placeholder="Search recipes" required>
+
                             <button type="submit" class="btn base-btn">
                                 <i class="fas fa-search left"></i> Search
                             </button>
@@ -113,6 +104,7 @@
             </div>
         </div>
         <br>
+
         <!--off canvas Nav-bar-->
         <div id="navMenu" class="col-12">
             <ul class="navbar-nav ml-auto">
@@ -165,23 +157,23 @@
         </div>
     </nav>
 
-<section id="hero-outer">
-    <div class="hero-image" style="background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/299-rob00154-eye.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=afa806ffe5b1581088f61c8f627ac237)">
-        <div class="overlay col-12"></div>
-        
-            <div class="row g-0 hero-text-box"> 
-                    <div class="center hero-text">
-                        <h1>BBQ with Friends </h1>
-                        <span class="subheading">A website for sharing and storing recipes.</span>
-                    </div>
-                
+    <!--Hero image zoom-->
+    <section id="hero-outer">
+        <div class="hero-image" style="background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/299-rob00154-eye.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=afa806ffe5b1581088f61c8f627ac237)">
+            <div class="overlay col-12"></div>
+            <!--Banner-->
+            <div class="row g-0 hero-text-box">
+                <div class="center hero-text">
+                    <h2>BBQ with Friends </h2>
+                    <span class="subheading">A website for sharing and storing recipes.</span>
+                </div>
             </div>
-        
-    </div>
-</section>
 
+        </div>
+    </section>
+
+    <!-- flash messages -->
     <section>
-        <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -198,17 +190,13 @@
         {% endblock %}
     </main>
 
-
-
-
+    <!-- footer -->
     <footer class="col-12 row g-0 justify-content-center">
         <div class="col-4 footer-content center">© 2021 BBQ with Friends<br>Paul Dijxhoorn </div>
-    </footer>   
-  
+    </footer>
 
-    
     {% block scripts%}
-    <script src="/static/js/navbar.js"></script> 
+    <script src="/static/js/navbar.js"></script>
     <script src="/static/js/tilt.js"></script>
     {% endblock %}
 </body>

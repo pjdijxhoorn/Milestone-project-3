@@ -151,8 +151,8 @@ the
 [W3C Markup Validator](https://validator.w3.org/)
 all pages were checked using the W3C markup validator. most pages were checked via url however 
 for the profile page you have to be logged in so this page was checked by copying the code into the validator.
-none of the pages displayed errors.
-![alt text]()
+none of the pages displayed errors. 1 warning was found on all pages for the section for flash messages however this section is only shown when errors occur so this needs no heading.
+![alt text](static/images/validationhtml.PNG)
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 The CSS was checked by direct input. no mistakes were found. 

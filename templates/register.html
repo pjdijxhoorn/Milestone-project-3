@@ -1,44 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="text-center"> Register</h1>
+<h2 class="text-center"> Register</h2>
 
-    <form class="col-12 row justify-content-center form" method="POST" action="{{ url_for('register') }}">
-        <div class="col-lg-6 col-sm-12" >
-          <!--Email-->
+<form class="col-12 row justify-content-center form" method="POST" action="{{ url_for('register') }}">
+    <div class="col-lg-6 col-sm-12">
+
+        <!--Email-->
         <div>
-          <label for="email" class="form-label">Email address:</label>
-          <input type="email" name="email" class="form-control" id="email" aria-describedby="email"  
-          placeholder="We'll never share your email with anyone else.">
+            <label for="email" class="form-label">Email address:</label>
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="email" placeholder="We'll never share your email with anyone else.">
         </div>
+
         <!--Username-->
         <div>
             <label for="username" class="form-label">
-              Username: <br> Usernames should be  5-15 characters long and made up of letters and/ or numbers.
+                Username: <br> Usernames should be 5-15 characters long and made up of letters and/ or numbers.
             </label>
-            <input type="text" name="username" class="form-control validate" id="username" aria-describedby="username"
-              minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  placeholder="" required>
-          </div>
-          <!--Password-->
-        <div>
-          <label for="password" class="form-label">Password:<br>passwords should be 5-15 characters long and made up of letters and numbers</label>
-          <input type="password" name="password" class="form-control validate" id="password" 
-            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"  placeholder="passwords should be 5-15 characters long and made up of letters and numbers." required>
+            <input type="text" name="username" class="form-control validate" id="username" aria-describedby="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="" required>
         </div>
+
+        <!--Password-->
+        <div>
+            <label for="password" class="form-label">Password:<br>passwords should be 5-15 characters long and made up of letters and numbers</label>
+            <input type="password" name="password" class="form-control validate" id="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="passwords should be 5-15 characters long and made up of letters and numbers." required>
+        </div>
+
         <!--Password confirm-->
         <div>
             <label for="passwordconfirm" class="form-label">Confirm password:</label>
             <input type="password" name="passwordconfirm" class="form-control" id="passwordconfirm" placeholder="Typ your password again to check.">
-          </div>
+        </div>
         <button type="submit" class="btn submit-btn">Submit</button>
     </div>
-      </form>
-      
-      <div class="row g-0">
-        <div class="col-12">
-            <p class="center">
-                Already a user?
-                <a href="{{ url_for('login') }}" class="center">Log in here</a>
-            </p>
-        </div>
-    </div>  
+</form>
+
+<!-- Call to login-->
+<div class="row g-0">
+    <div class="col-12">
+        <p class="center">
+            Already a user?
+            <a href="{{ url_for('login') }}" class="center">Log in here</a>
+        </p>
+    </div>
+</div>
 {% endblock %}

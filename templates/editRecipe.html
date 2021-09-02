@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="text-center">Edit recipe</h1>
+<h2 class="text-center">Edit recipe</h2>
 
 
 <form class="row g-0 form-edit-recipe" method="POST" action="{{ url_for('editRecipe', recipe_id=recipe._id) }}">
@@ -53,16 +53,14 @@
     <!--input Other_requirments-->
     <label for="Other_requirments" class="form-label">What else do you need?</label>
     <div class="input-group">
-        <textarea id="Other_requirments" rows="4" class="form-control" aria-label="With textarea" name="Other_requirments" >{{-recipe.Other_requirments-}}</textarea>
+        <textarea id="Other_requirments" rows="4" class="form-control" aria-label="With textarea" name="Other_requirments">{{-recipe.Other_requirments-}}</textarea>
     </div>
 
     <!--input add button-->
     <div class="col-12">
         <a href="{{ url_for('profile', username=session['user']) }}" class="btn submit-btn">Cancel <i class="fas fa-times-circle right"></i></a>
-
         <button type="submit" class="btn submit-btn">Save recipe <i class="far fa-edit"></i></button>
     </div>
 </form>
 
 {% endblock %}
-

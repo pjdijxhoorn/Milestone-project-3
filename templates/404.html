@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center errorMsg" > Oops it looks like the page doesn't exists</h2>
-<div class="center"> <a class="center" href="{{ url_for('index') }}">Click Here</a><p> To go back to the Home Page</p></div>
+<h2 class="center errorMsg"> Oops it looks like the page doesn't exists</h2>
+<div class="center">
+    <a class="center" href="{{ url_for('index') }}">Click Here</a>
+    <p> To go back to the Home Page</p>
+</div>
 
 {% endblock %}
-
