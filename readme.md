@@ -150,8 +150,8 @@ the
 
 [W3C Markup Validator](https://validator.w3.org/)
 all pages were checked using the W3C markup validator. most pages were checked via url however 
-some you have to be logged in so these sites were checked by copying the code into the validator.
-none of the pages displayed errors. 
+for the profile page you have to be logged in so this page was checked by copying the code into the validator.
+none of the pages displayed errors.
 ![alt text]()
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
@@ -159,7 +159,8 @@ The CSS was checked by direct input. no mistakes were found.
 ![css validation](static/images/cssvalidation.PNG)
 
 [jshint javascript validator](https://jshint.com/)
-![alt text]()
+The javascript was tested by direct input. No mistakes were found.
+![alt text](static/images/js-validate.PNG)
 
 ### Testing User Stories from User Experience (UX) Section
 
