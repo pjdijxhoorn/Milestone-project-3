@@ -211,14 +211,17 @@ Messages | messages | text| string
     - [python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 - ### Frameworks, Libraries & Programs Used
-    1. [Heroku](https://id.heroku.com/login)
-    2. [Db mongo](https://www.mongodb.com/cloud/atlas?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_emea_rlsamulti_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=b&utm_ad_campaign_id=14412646473&gclid=CjwKCAjwmqKJBhAWEiwAMvGt6B8h7cHntKHOhaSJ3kJQJ_LnOk1EI7Wp-jgH5lQhb4KojXM_XWzilhoCQFYQAvD_BwE) 
+    1. [Heroku](https://id.heroku.com/login) was used to host my app.
+    2. [Db mongo](https://www.mongodb.com/cloud/atlas?utm_content=rlsapostreg&utm_source=google&utm_campaign=gs_emea_rlsamulti_search_brand_dsa_atlas_desktop_rlsa_postreg&utm_term=&utm_medium=cpc_paid_search&utm_ad=b&utm_ad_campaign_id=14412646473&gclid=CjwKCAjwmqKJBhAWEiwAMvGt6B8h7cHntKHOhaSJ3kJQJ_LnOk1EI7Wp-jgH5lQhb4KojXM_XWzilhoCQFYQAvD_BwE) was used as database storage in the cloud. 
     3. [Bootstrap](https://getbootstrap.com/) to make the website more responsive and to simplify the code.
     4. [Tilt](https://micku7zu.github.io/vanilla-tilt.js/) to get the recipe card tilt effect
     5. [Font awesome](https://fontawesome.com/) Tto provide icons to the website.
     6. [Google fonts](https://fonts.google.com/) to style the website fonts.
-    7. [flask](https://flask.palletsprojects.com/en/2.0.x/)
+    7. [flask](https://flask.palletsprojects.com/en/2.0.x/) was used to help write python code.
     8. [lucid](https://lucid.app/documents#/dashboard?folder_id=home) was used for the Wire frames
+    9. [pymongo](https://pymongo.readthedocs.io/en/stable/) was used as an Python API for MongoDB. this helped me to connect  data from backend to the front end
+    10. [jinja](https://jinja.palletsprojects.com/en/2.11.x/) was used for templating in HTML.
+
 
 ## Testing
 
@@ -294,19 +297,25 @@ The python was checked with PEP8 online. No mistakes were found.
 - The website was tested on Google Chrome and on Edge. 
 - The website was tested with all the pages for the responsiveness on phone ipad and computer and also on devtools in chrome for the same thing.
 - The website was tested by several people on different devices to see if the links and functions were working.
+and for illogical paths functions etc.
 
 ### know bugs
 
-- The intention was to use a full heart and empty heart icon for the favourite function beacuse these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the fontawesome styled sheets. therefor other icons are used for this function at the moment. *issue fixed*
-- When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page. *issue fixed* 
-    - build an extra function to redirect to profile page however i am sure there is a more DRY way to solve     this issue.
-- The suggestion list for the users in the messages system doesn't display all the users and displays a users that is deleted allready. *issue fixed*
+- The intention was to use a full heart and empty heart icon for the favourite function because these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the font-awesome styled sheets. therefor other icons are used for this function at the moment. *issue fixed*
+
+        font-awesome has before and after css psuedo classes that messed up the icons
+
+- When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page. *issue fixed*
+
+        redirecting to different pages based on from which page the users is the best solution however I made a quick fix by making a complete extra path/ function. Hope to find a DRY way in the future.
+
+- The suggestion list for the users in the messages system doesn't display all the users and displays a users that is deleted already. *issue fixed*
+
+        The usernames were not called within the function. therefor it wasn't working
 
 ## Deployment
 
 This project was made with the Gitpod IDE and github as a remote repository. This project contains secure information therefor an env.py file is used.
-
-
 
 ### Instructions Making a Local Clone
 
@@ -341,8 +350,52 @@ This project was made with the Gitpod IDE and github as a remote repository. Thi
 
 ### Deploying this project to Heroku
 
+To deploy to Heroku use the next steps:
 
+1. Sign up or log in to your account on Heroku.
+2. Create a new app with a unused name.
+3. Set the region to be the closets one to you.
+4. When you created the app go to the 'Settings' tab and click 'Reveal Config Variables' and input the following values.
 
+| Config Vars | Key | 
+-----  | ---  |
+| IP | 0.0.0.0| 
+| MONGO_DBNAME | `<Your database name>` | 
+| MONGO_URI | mongodb+srv://`<Your username>`:`<Your password>`@`<cluster_name>`.djxyg.mongodb.net/`<database_name>`?retryWrites=true&w=majority | 
+| PORT| 5000 | 
+| SECRET_KEY | `<Your secret key>` |  
+
+Note: several values i replaced with a placeholder for security reasons.
+
+5. go back toi your IDE. Create a requirements.txt with the following command in your terminal:
+
+        pip3 freeze --local > requirements.txt
+
+6. Then create a Procfile:
+
+        echo web: python run.py > Procfile
+
+7. Add commit and push with the following commands 
+ ```
+git add -A
+```
+```
+git commit -m " "
+```
+```
+git push
+```
+
+8. After pushing these files go back to the Heroku deployment tab. and choose for the method Github.
+
+9. When prompted type the name of your repo in the box
+
+10. click your repo when it appears.
+
+11. scroll down to the deploy button and click
+'enable automatic deployment'.
+
+12. Click deploy. and enjoy your project.
 
 ## Credits
 
