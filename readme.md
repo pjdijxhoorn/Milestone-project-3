@@ -304,36 +304,56 @@ The python was checked with PEP8 online. No mistakes were found.
 
 ## Deployment
 
-to run this project on your own IDE you can follow the instructions below:
+This project was made with the Gitpod IDE and github as a remote repository. This project contains secure information therefor an env.py file is used.
 
-### instructions
 
-1. Make a clone of the github repository [link](https://github.com/pjdijxhoorn/Milestone-project-3). 
-If your IDE has a clone function you can use the url provided after clicking code. Else download the zip file and extract this to your chosen folder. alternatif if you have Git installed you can clone the repository with the following command.
+
+### Instructions Making a Local Clone
+
+1.Sign in/up to Github and go to the main page of the repository [link](https://github.com/pjdijxhoorn/Milestone-project-3). 
+
+2. Above the files click the button for Code.
+3. Copy the link under the HTTPS tab.
+4. Open your code editor.
+5. Open a new work directory, or a existing one where you want the directory to be created.
+6. In the command line write git clone, and after that paste the URL you from Step 3 and hit enter.
 
         git clone https://https://github.com/pjdijxhoorn/Milestone-project-3
+7. Now created a Database for your usage of this cloned project with MongoDB.
+8. within the terminal type the following to install the required dependencies:
 
-2. openm your IDE, open a terminal un the unzip folder or cd the correct location.
+        pip3 install -r requirements.txt
+8. Now you want to create a env.py file. with the content below
 
-3. A
-### GitHub Pages
+        import os
+
+        oos.environ.setdefault("IP", "0.0.0.0")
+        os.environ.setdefault("PORT", "5000")
+        os.environ.setdefault("SECRET_KEY", "<put_your_own_key_here>")
+        os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>.djxyg.mongodb.net/<database_name>?retryWrites=true&w=majority")
+        os.environ.setdefault("MONGO_DBNAME", "<database_name>")
+
+9. make sure that your env.py file is added to .gitignore so your database information is not viewable by others.
+
+10. your local version is ready to run. activated it by typing the following command into your terminal:
+
+        python3 run.py
+
+### Deploying this project to Heroku
 
 
-
-### Forking the GitHub Repository
-
-
-### Making a Local Clone
 
 
 ## Credits
 
 ### Code
 
+- This project structure is build upon the 'mini project- putting it all together' delivered by Code Institute
+
 ### Content 
 
-- Content created by the users: admin and dijxkie is created by the site creator.
-- All the other recipes are created by the other users of the site this includes the images used there. 
+- Content created by the users: admin and dijxkie is created by the site creator. 
+- All the other recipes are provided by the other users of the site this includes the images used there.  
 
 ### images
 - The hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
@@ -344,6 +364,7 @@ If your IDE has a clone function you can use the url provided after clicking cod
 
 - Thanks to my great friends and family for populating the website with users and original recipes.
 - Special thanks to my mentor for being so inspirational and helpfull.
+- unbeknownst to here, Anna greaves has help me out tremendously by here structured Readme https://github.com/AJGreaves/thehouseofmouse
 
 ## Contact
 
