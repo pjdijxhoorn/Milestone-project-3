@@ -18,49 +18,52 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.errorhandler(404)
 def not_found(e):
-  return render_template("404.html")
+    return render_template("404.html")
 
 
 @app.route("/")
 def index():
     newRecipies = mongo.db.recipies.find().sort('_id', -1).limit(3)
-    return render_template("index.html", newRecipies=newRecipies )
+    return render_template("index.html", newRecipies=newRecipies)
 
 
 @app.route("/recipe")
 def recipe():
     recipies = mongo.db.recipies.find()
-    # this code checks for a logged in user and displays his favourites on recipes
+    # this code checks for a loggedin user and displays his fav recipes
     try:
         username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+            {"username": session["user"]})["username"]
 
         user = mongo.db.users.find_one({"username": session["user"]})
         try:
             favourites = user.get("favourites")
-        except: 
+        except:
             favourites = []
-    except:     
+    except:
         favourites = []
         username = []
-    return render_template("recipe.html", recipies=recipies, favourites=favourites, username=username)
+    return render_template(
+        "recipe.html", recipies=recipies, favourites=favourites,
+        username=username)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     try:
-        # this code checks for a logged in user and displays his favourites on recipes
+        # this code checks for a logged in user and displays his fav recipes
         username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+            {"username": session["user"]})["username"]
 
         user = mongo.db.users.find_one({"username": session["user"]})
         try:
             favourites = user.get("favourites")
-        except: 
+        except:
             favourites = []
-    except:     
+    except:
         favourites = []
         username = []
 
@@ -69,7 +72,8 @@ def search():
     recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
     if recipies == []:
         flash("Sorry we couldn't find anything matching Your search query!")
-    return render_template("recipe.html", recipies=recipies, favourites=favourites)
+    return render_template(
+        "recipe.html", recipies=recipies, favourites=favourites)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -84,7 +88,7 @@ def register():
 
         password = request.form.get("password")
         passwordconfirm = request.form.get("passwordconfirm")
-        #check for existing users / mail and password confirm
+        # check for existing users / mail and password confirm
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -100,7 +104,8 @@ def register():
         # build a new user
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("passwordconfirm")),
+            "password": generate_password_hash(request.form.get(
+                "passwordconfirm")),
             "email": request.form.get("email"),
             "favourites": [""]
         }
@@ -117,7 +122,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect (url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
@@ -125,18 +130,19 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists 
+        # check if username exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
             # does password match user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                         request.form.get("username")))
-                    return redirect (url_for("profile", username=session["user"]))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -157,7 +163,7 @@ def profile(username):
         # checks if the user exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("for").lower()})
-        
+
         if existing_user:
             # content message
             message = {
@@ -169,8 +175,8 @@ def profile(username):
             flash("Message send")
 
         else:
-            flash("no such user")   
-        return redirect (url_for("profile", username=session["user"]))
+            flash("no such user")
+        return redirect(url_for("profile", username=session["user"]))
     # finds the user his messages and his recipies
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -182,27 +188,29 @@ def profile(username):
     try:
         user = mongo.db.users.find_one({"username": session["user"]})
         try:
-            favourites = user.get("favourites")  
-        except: 
+            favourites = user.get("favourites")
+        except:
             favourites = []
-        
-    except:     
+
+    except:
         favourites = []
-        username = []    
+        username = []
 
     recipies = mongo.db.recipies.find()
     users = mongo.db.users.find()
     if session["user"]:
-        return render_template("profile.html", username=username, 
-        userRecipe=userRecipe, messages=messages, recipies=recipies, favourites=favourites, users=users)
-    return redirect (url_for("login"))
+        return render_template(
+            "profile.html", username=username, userRecipe=userRecipe,
+            messages=messages, recipies=recipies, favourites=favourites,
+            users=users)
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user")
-    return redirect (url_for("login"))
+    return redirect(url_for("login"))
 
 
 @app.route("/addRecipies", methods=["GET", "POST"])
@@ -231,7 +239,7 @@ def addRecipies():
 @app.route("/editRecipe/<recipe_id>", methods=["GET", "POST"])
 def editRecipe(recipe_id):
     if request.method == "POST":
-        # gets a recipe and takes all info /changes from the form and saves it 
+        # gets a recipe and takes all info /changes from the form and saves it
         editedRecipe = {
             "category_name": request.form.get("category_name"),
             "Name_dish": request.form.get("Name_dish"),
@@ -244,23 +252,24 @@ def editRecipe(recipe_id):
         }
         mongo.db.recipies.update({"_id": ObjectId(recipe_id)}, editedRecipe)
         flash("Recipe Successfully saved")
-    
+
     recipe = mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("editRecipe.html", recipe=recipe, categories=categories)
+    return render_template(
+        "editRecipe.html", recipe=recipe, categories=categories)
 
 
 @app.route("/deleteRecipe/<recipe_id>", methods=["GET", "POST"])
 def deleteRecipe(recipe_id):
         # deletes recipe
-       mongo.db.recipies.remove({"_id": ObjectId(recipe_id)})
-       flash("recipe succesfully deleted")
-       return redirect ( url_for('profile', username=session['user']))
-   
+        mongo.db.recipies.remove({"_id": ObjectId(recipe_id)})
+        flash("recipe succesfully deleted")
+        return redirect(url_for('profile', username=session['user']))
+
 
 @app.route("/adminpage")
 def adminpage():
-    categories = list (mongo.db.categories.find().sort("category_name", 1))
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("adminpage.html", categories=categories)
 
 
@@ -274,7 +283,7 @@ def addCategory():
         mongo.db.categories.insert_one(category)
         flash("New category Added")
         return redirect(url_for("adminpage"))
-    return render_template ("addCategory.html")
+    return render_template("addCategory.html")
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -305,7 +314,7 @@ def deletemessage(message_id):
     # delete message
     mongo.db.messages.remove({"_id": ObjectId(message_id)})
     flash("message successfully deleted")
-    return redirect ( url_for('profile', username=session['user']))
+    return redirect(url_for('profile', username=session['user']))
 
 
 @app.route("/singleRecipe/<recipe_id>", methods=["GET", "POST"])
@@ -318,25 +327,32 @@ def singleRecipe(recipe_id):
 @app.route("/favourite/<recipe_id>", methods=["GET", "POST"])
 def favourite(recipe_id):
 
-    # get recipe id and user 
+    # get recipe id and user
     recipe = mongo.db.recipies.find(
         {"_id": ObjectId(recipe_id)})
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    user = mongo.db.users.find_one({"username": session["user"],"favourites": recipe_id})
+    user = mongo.db.users.find_one(
+        {"username": session["user"], "favourites": recipe_id})
 
     # check users favourites if no one logged in then empty favourites
     try:
         favourites = user.get("favourites")
-    except: 
+    except:
         favourites = []
-   
-    # if the recipe favourite icon is clicked toggle add/remove recipe to array favourites
+
+    # if the recipe favourite icon is clicked toggle
+    # add/remove recipe to array favourites
     if recipe_id in favourites:
-         mongo.db.users.update({"username": session["user"]},{"$pull":{"favourites": recipe_id}})
+        mongo.db.users.update(
+            {"username": session["user"]},
+            {"$pull": {"favourites": recipe_id}})
     else:
-         mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
-    return redirect (url_for("recipe", recipe=recipe, username=username, favourites=favourites ))
+        mongo.db.users.update_one(
+            {"username": session["user"]},
+            {"$push": {"favourites": recipe_id}})
+    return redirect(url_for(
+        "recipe", recipe=recipe, username=username, favourites=favourites))
 
 
 @app.route("/favourites/<recipe_id>", methods=["GET", "POST"])
@@ -347,21 +363,31 @@ def favourites(recipe_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    user = mongo.db.users.find_one({"username": session["user"],"favourites": recipe_id})
+    user = mongo.db.users.find_one(
+        {"username": session["user"], "favourites": recipe_id})
     try:
         favourites = user.get("favourites")
-    except: 
+    except:
         favourites = []
-   
 
     if recipe_id in favourites:
-         mongo.db.users.update({"username": session["user"]},{"$pull":{"favourites": recipe_id}})
+        mongo.db.users.update(
+            {"username": session["user"]},
+            {"$pull": {"favourites": recipe_id}})
     else:
-         mongo.db.users.update_one({"username": session["user"]},{"$push":{"favourites": recipe_id}})
-    return redirect (url_for("profile", recipe=recipe, username=username, favourites=favourites ))
+        mongo.db.users.update_one(
+            {"username": session["user"]},
+            {"$push": {"favourites": recipe_id}})
+    return redirect(url_for("profile",
+                    recipe=recipe, username=username, favourites=favourites))
 
 
 if __name__ == "__main__":
+    app.run(
+        host=os.environ.get("IP", "0.0.0.0"),
+        port=int(os.environ.get("PORT")),
+        debug=True)
+
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT")),

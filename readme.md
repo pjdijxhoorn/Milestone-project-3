@@ -143,10 +143,11 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
     4. [Tilt](https://micku7zu.github.io/vanilla-tilt.js/) to get the recipe card tilt effect
     5. [Font awesome](https://fontawesome.com/) Tto provide icons to the website.
     6. [Google fonts](https://fonts.google.com/) to style the website fonts.
+    7. [flask](https://flask.palletsprojects.com/en/2.0.x/)
 
 ## Testing
 
-the
+The IDE was Gitpod within gitpod you can install exstension. for this project I used 2 extensions code spell checker to check the spelling of code and js-css-html formatter to check indentation. However the code was also tested using The W3C CSS Validator, The W3C Markup Validator, and the JShint validator. to make sure no mistakes errors are left in the project
 
 [W3C Markup Validator](https://validator.w3.org/)
 all pages were checked using the W3C markup validator. most pages were checked via url however 
@@ -161,6 +162,10 @@ The CSS was checked by direct input. no mistakes were found.
 [jshint javascript validator](https://jshint.com/)
 The javascript was tested by direct input. No mistakes were found.
 ![alt text](static/images/js-validate.PNG)
+
+[PEP8 online](http://pep8online.com/checkresult)
+The python was checked with PEP8 online. No mistakes were found.
+![alt text](static/images/pep8 validator.PNG)
 
 ### Testing User Stories from User Experience (UX) Section
 
