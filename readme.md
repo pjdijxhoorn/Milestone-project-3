@@ -4,23 +4,28 @@ View the live website here. [link](https://bbq-with-friends.herokuapp.com/)
 
 This is a website for finding, making, sharing and storing BBQ recipes. 
 On top of that the site gives users the ability to interact with each other by sending messages to each other. 
-to make it easier to find back those great recipies  you can store your favourite recipes.
+to make it easier to find back those great recipes  you can store your favourite recipes.
 the website is designed to work on phone tablet and pc. The website isn't designed with a particuliar device in mind. However searching and storing is most handy on pc because you can oversee all the recipes better.
-when you are BBQ-ing you don't want to drag a pc around because of this the website is made in a way so you can see the recipies in full screen on tablet and phone.
+when you are BBQ-ing you don't want to drag a pc around because of this the website is made in a way so you can see the recipes in full screen on tablet and phone.
 
 ![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
 
 ## Table of contents
 1. [UX](#UX)
 2. [Features](#Features)
-3. [Technologies Used](#Technologies)
-4. [Testing](#Testing)
-5. [Deployment](#Deployment)
-6. [Credits](#Credits)
-7. [contact](#Contact)
+3. [Information Architecture](#Information)
+4. [Technologies Used](#Technologies)
+5. [Testing](#Testing)
+6. [Deployment](#Deployment)
+7. [Credits](#Credits)
+8. [contact](#Contact)
 
 
 ## User Experience (UX)
+
+- ## main aims
+    - to create a website that gives people a platform to share their recipes and form a community of BBQ lovers.
+    - give people a place where the can store and find new bbq recipes.
 
 -   ## User stories
 
@@ -67,13 +72,19 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
 ## Features
 
 - ### General
-
-    - The navigation bar is responsive for mobile phone users it shows a hamburger menu with all the same links as the big nav-bar. The buttons are interactive for the computer users when hovered over they give conformation by a small orange line beneath them.
-    - for computer users you can see a searchfield in the navbar so no matter what page they are on the can search for recipes, catogories, ingredients. this redirects to the recipe page.   
-    - On every page you can see the hero image underneath the navbar. this has a zoomfunction to capture the attention of the users when they arrive on the pages.
-    - all the pages have a message box that displays text when a important action was succesfull or when an error occurred.  
-
+    
+    - The navigation bar is responsive for mobile phone and ipad users it shows a hamburger menu with all the same links as the big nav-bar. The buttons are interactive for the computer users when hovered over they give conformation by a small orange line beneath them.
+    ![general functions.](static/images/menuphone.PNG)
+    
+    - for computer users you can see the menu items on the bar and a search field so no matter what page they are on the can search for recipes, catogories, ingredients. this redirects to the recipe page.
     ![general functions.](static/images/general.PNG)
+
+    - On every page you can see the hero image underneath the navbar. this has a zoom function to capture the attention of the users when they arrive on the pages.
+    - all the pages have a message box that displays text when a important action was succesfull or when an error occurred.
+
+      ![general functions.](static/images/errormessg.png)
+
+    
 
 
 - ### Home
@@ -100,7 +111,7 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
 
     ![profile functions.](static/images/profile2.PNG)
 
-    - Underneath the personal recipes there is a favourites list here you can find all tyhe recipes that are marked on the recipe page. each one has a button to remove it from the list again.
+    - Underneath the personal recipes there is a favourites list here you can find all the recipes that are marked on the recipe page. each one has a button to remove it from the list again.
 
     ![profile functions.](static/images/profile3.PNG)    
 
@@ -109,7 +120,7 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
 
     ![login functions.](static/images/login.PNG)  
 
-    - the register page has a form to register a account. this form has a check for double usernames and email adresses and has a password cconformation to make sure that users really have the password the want. this page has a link to the login page for visitors that already have a account.
+    - the register page has a form to register a account. this form has a check for double usernames and email adresses and has a password conformation to make sure that users really have the password the want. this page has a link to the login page for visitors that already have a account.
 
     ![register functions.](static/images/register.PNG)  
 
@@ -126,6 +137,69 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
     - On the profile page in the messages. Messages send will be seen aswell and will be displayed more like a conversation (like whatsapp).
     - Recipe explanation can be structured into steps. instead of a text area. 
         
+## Information Architecture
+
+- ### Database structure
+    The data used for this project is stored in my MongoDB database. There are 4 collections within:
+    1. *Users* this collection stores the username, encrypted password, email and a array of favourites with a content of stings. 
+    2. *Categories* this collection stores the catogories of recipes.
+    3. *Recipes* this collection stores the recipes: (catogory, name, preperation-time, photo-url, ingredients, explanation, other requirments and the person who it is created by).
+    4. *Messages* this collection stores who made the messages, who it is for and the messages itself.
+
+- ### Data Storage Types
+    The data types stored in the mongoDB database are:
+
+    1. ObjectId
+    2. String
+    3. array
+
+- ### Collections Data Structure
+    - #### User collection
+
+| Title | Key in db | Form validation type | Data type |
+-----  | ---  | --- | ---
+users | _id  | None | ObjectId 
+Username | username | text, `minlength="5"` | string
+Password | password | text, `maxlength="15"`| string
+favourites | favourites | array| array
+-----  | ---  | --- | ---
+0 | 0 | text, an recipe ID`| string
+
+- #### Categories collection 
+
+| Title | Key in db | Form validation type | Data type |
+-----  | ---  | --- | ---
+categories | _id  | None | ObjectId 
+Category_name | category_name | text, | string
+
+
+- #### Recipes collection
+
+| Title | Key in db | Form validation type | Data type |
+-----  | ---  | --- | ---
+Recipies | _id  | None | ObjectId 
+Category_name | category_name | text, select-dropdown `required` | string
+Name_dish | Name_dish | text, `required`| string
+Preperation_time | preperation_time | text, `required` | string
+Photo_link | Photo_link | text,  url| string
+Ingredients | ingredients | text, `required` | string
+Explanation | explanation | text, `required`| string
+Other_requirments | Other_requirments | text | string
+Created_by | created_by | username, automatic | string
+
+
+
+- #### Messages collection
+
+| Title | Key in db | Form validation type | Data type |
+-----  | ---  | --- | ---
+Messages | _id  | None | ObjectId 
+Created_by | created_by | text, automatic | string
+For | for | text suggestions| string
+Messages | messages | text| string
+
+
+
 
 ## Technologies Used
 
@@ -144,40 +218,48 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
     5. [Font awesome](https://fontawesome.com/) Tto provide icons to the website.
     6. [Google fonts](https://fonts.google.com/) to style the website fonts.
     7. [flask](https://flask.palletsprojects.com/en/2.0.x/)
+    8. [lucid](https://lucid.app/documents#/dashboard?folder_id=home) was used for the Wire frames
 
 ## Testing
 
 The IDE was Gitpod within gitpod you can install exstension. for this project I used 2 extensions code spell checker to check the spelling of code and js-css-html formatter to check indentation. However the code was also tested using The W3C CSS Validator, The W3C Markup Validator, and the JShint validator. to make sure no mistakes errors are left in the project
 
-[W3C Markup Validator](https://validator.w3.org/)
+### HTML Validation
+
+-   [W3C Markup Validator](https://validator.w3.org/)
 all pages were checked using the W3C markup validator. most pages were checked via url however 
 for the profile page you have to be logged in so this page was checked by copying the code into the validator.
 none of the pages displayed errors. 1 warning was found on all pages for the section for flash messages however this section is only shown when errors occur so this needs no heading.
-![alt text](static/images/validationhtml.PNG)
+    ![alt text](static/images/validationhtml.PNG)
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+### CSS Validation
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 The CSS was checked by direct input. no mistakes were found. 
 ![css validation](static/images/cssvalidation.PNG)
 
-[jshint javascript validator](https://jshint.com/)
+### JS Validation
+
+- [jshint javascript validator](https://jshint.com/)
 The javascript was tested by direct input. No mistakes were found.
 ![alt text](static/images/js-validate.PNG)
 
-[PEP8 online](http://pep8online.com/checkresult)
+###  Python Validation
+
+- [PEP8 online](http://pep8online.com/checkresult)
 The python was checked with PEP8 online. No mistakes were found.
-![alt text](static/images/pep8 validator.PNG)
+![alt text](static/images/pep8validator.PNG)
 
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
-    1. As a First Time Visitor, I would like to see what the site is about and how the site works. 
-        The expected first time visitors would be people  just looking for a good recipe. 
+    1. As a First Time Visitor, I would like to see what the site is about and how the site works. The expected first time visitors would be people  just looking for a good recipe. 
 
         1. On the home page there is a small explanation what the site is about. It is also in de banner in the hero-image. the buttons and nav-bar lead the way for the rest of the functions. These use familiar icons and titles to direct the users to the content.
 
     2. As a First Time Visitor, I want to find a good recipe.
         
-        2. On the recipe page you can search for recipes if you want to find something specific else you can see all the recipies there. accesable for everbody 
+        2. On the recipe page you can search for recipes if you want to find something specific else you can see all the recipes there. accesable for everybody 
 
     3. As a First Time Visitor, I want to be able to easily navigate the site.
 
@@ -254,14 +336,14 @@ If your IDE has a clone function you can use the url provided after clicking cod
 - All the other recipes are created by the other users of the site this includes the images used there. 
 
 ### images
-    - The hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
+- The hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
     it was a free photo made by rob (no other name was given).
-    - photo smores recipe by Jessica Ruscello on Unsplash
+- photo smores recipe by Jessica Ruscello on Unsplash
 
 ### Acknowledgements
 
-     - Thanks to my great friends and family for populating the website with users and original recipes.
-     - Special thanks to my mentor for being so inspirational and helpfull.
+- Thanks to my great friends and family for populating the website with users and original recipes.
+- Special thanks to my mentor for being so inspirational and helpfull.
 
 ## Contact
 

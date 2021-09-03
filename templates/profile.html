@@ -2,7 +2,6 @@
 {% block content %}
 <h2 class="center"> {{ username }}'s profile</h2>
 
-
 <ul class="mini-menu center">
     <li class="btn submit-button base-btn mini-menu-item"><a href="#mailbox">Messages</a></li>
     <li class="btn submit-button base-btn mini-menu-item"><a href="#user-recipes">My recipes</a></li>
@@ -85,13 +84,10 @@
     {%for recipe in userRecipe%}
     <div class="col-md-6 recipe-block g-0">
 
-
         <div class="col-12 list-inline-item">
             <a href="{{ url_for('editRecipe', recipe_id=recipe._id) }}" class="btn submit-btn edit-btn">
                 <h6> <i class="far fa-edit">Edit</i></h6>
             </a>
-
-
 
             <!-- Button trigger modal -->
             <button type="button" class="btn base-btn" data-bs-toggle="modal" data-bs-target="#test{{recipe._id}}">
@@ -118,8 +114,6 @@
                     </div>
                 </div>
             </div>
-
-
 
         </div>
         <p> Type of dish: {{recipe.category_name}}</p>

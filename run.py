@@ -55,9 +55,6 @@ def recipe():
 def search():
     try:
         # this code checks for a logged in user and displays his fav recipes
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-
         user = mongo.db.users.find_one({"username": session["user"]})
         try:
             favourites = user.get("favourites")
