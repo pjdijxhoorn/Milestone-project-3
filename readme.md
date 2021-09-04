@@ -3,9 +3,9 @@
 View the live website here. [link](https://bbq-with-friends.herokuapp.com/)
 
 This is a website for finding, making, sharing and storing BBQ recipes. 
-On top of that the site gives users the ability to interact with each other by sending messages to each other. 
-to make it easier to find back those great recipes  you can store your favourite recipes.
-the website is designed to work on phone tablet and pc. The website isn't designed with a particuliar device in mind. However searching and storing is most handy on pc because you can oversee all the recipes better.
+On top of that the site gives users the ability to interact with each other by sending messages to one other. 
+You can store your favourite recipes to make it easier to find back those great recipes.
+the website is designed to work on phone tablet and pc. The website isn't designed with a particuliar device in mind. However searching and storing is the preferred method on pc because you can oversee all the recipes better.
 when you are BBQ-ing you don't want to drag a pc around because of this the website is made in a way so you can see the recipes in full screen on tablet and phone.
 
 ![A image that shows how the website looks on different devices.](static/images/responsive.PNG)
@@ -18,7 +18,7 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
 5. [Testing](#Testing)
 6. [Deployment](#Deployment)
 7. [Credits](#Credits)
-8. [contact](#Contact)
+8. [Contact](#Contact)
 
 
 ## User Experience (UX)
@@ -49,15 +49,15 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
 
     ## Design
     -   ### Colour Scheme
-        Within this website only 3 colors were used. black, white and a dark tone of orange. black was used as the background to give the site a polished and stylish look. on top of that the black gives association with the bbq with coals. white was used for the text because this matches well with the black and makes it easy to read. Orange was used to direct the users attention to the interactive parts of the site. this was chosen because it gives the association with the fire of a BBQ, also when using mainly white and black any color pops up more on a site and draws attention.
+        Within this website only 3 colors were used. black, white and a dark tone of orange. black was used as the background to give the site a polished and stylish look. on top of that the black gives association with the bbq with coals. white was used for the text because this matches well with the black and makes it easier to read. Orange was used to direct the users attention to the interactive parts of the site. this was chosen because it gives the association with the fire of a BBQ. Mainly white and black where used so the orange pops up more on the site and draws attention.
 
         ![The used colors with their codes](static/images/color.PNG)
 
         The color test - [View](static/pdf/color-samples.pdf)
 
     -   ### Typography
-        The font used is Architects Daughter this is a informal yet easy to read font. This styles well with the main theme of the site: BBQ.
-        as back-up in the case Architects Daughter fails there is sans-serif.  
+        The font used is Architects Daughter this is a informal yet easy to read font. This styles well with the main theme of the site, namely BBQ.
+        As back-up in the case Architects Daughter fails sans-serif was used.  
 
         ![font.](static/images/font.PNG)
 
@@ -73,22 +73,20 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
 
 - ### General
     
-    - The navigation bar is responsive for mobile phone and ipad users it shows a hamburger menu with all the same links as the big nav-bar. The buttons are interactive for the computer users when hovered over they give conformation by a small orange line beneath them.
+    - The navigation bar is responsive for mobile phone and ipad users it shows a hamburger menu with all the same links as the big nav-bar. The buttons are interactive for the computer users when hovered over they give conformation by showing a small orange line beneath them.
     ![general functions.](static/images/menuphone.PNG)
     
     - for computer users you can see the menu items on the bar and a search field so no matter what page they are on the can search for recipes, catogories, ingredients. this redirects to the recipe page.
     ![general functions.](static/images/general.PNG)
 
     - On every page you can see the hero image underneath the navbar. this has a zoom function to capture the attention of the users when they arrive on the pages.
-    - all the pages have a message box that displays text when a important action was succesfull or when an error occurred.
+    - All the pages have a message box that displays text when a important action was successful or when an error occurred.
 
-      ![general functions.](static/images/errormessg.png)
+    ![general functions.](static/images/errormessg.png)
 
     
-
-
 - ### Home
-    - The Home (index) screen shows a small explanation what the site is about to make sure that new users know what the site is about. beneath that the 3 newest recipes will be displayed so that returning and frequent users can instantly see if there are any new recipes.
+    - The Home (index) screen shows a small explanation what the site is about. Moreover, the  three newest recipes will be displayed so that returning and frequent users can instantly see if there are any new recipes.
 
     ![home functions.](static/images/home.PNG)
 
@@ -125,7 +123,7 @@ when you are BBQ-ing you don't want to drag a pc around because of this the webs
     ![register functions.](static/images/register.PNG)  
 
 - ### Add recipes
-    - As a user when logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe. Adding photos is done by an URL. In the next block we will learn about how to add photo's in other ways. 
+    - As a user that is  logged in you can add recipes by clicking the add recipe button on the navbar. Here you find a form to fill in all the data of the recipe. Adding photos is done by an URL. In the next block we will learn about how to add photo's in other ways. 
 
     ![add recipe functions.](static/images/addrecipe.PNG)  
 
