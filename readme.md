@@ -301,21 +301,21 @@ and for illogical paths functions et cetera.
 
 ### know bugs
 
-- The intention was to use a full heart and empty heart icon for the favourite function, because these are well know ti users and there for automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before after states within CSS. when i tried to trace them by inspecting them the source seemed to come from the font-awesome styled sheets. therefor other icons are used for this function at the moment. *issue fixed*
+- The intention was to use a full heart and empty heart icon for the favourite function, because these are well know to the users and therefor automatic and UX friendly. however these icons are always displaying empty hearts. this has something to do with the before and after states within CSS. When I tried to trace them by inspecting them, the source seemed to come from the font-awesome styled sheets. Therefor other icons are used for this function at the moment. *issue fixed*
 
-        font-awesome has before and after css psuedo classes that messed up the icons
+        Font-awesome has before and after css pseudo classes that messed up the icons
 
 - When deleting a favourite recipe from the profile page you get redirected to recipe page instead back to the profile page. *issue fixed*
 
-        redirecting to different pages based on from which page the users is the best solution however I made a quick fix by making a complete extra path/ function. Hope to find a DRY way in the future.
+        Redirecting to different pages based on from which page the users came is the best solution. However, I made a quick fix by making a complete extra path function. I hope to find a DRY way in the future.
 
-- The suggestion list for the users in the messages system doesn't display all the users and displays a users that is deleted already. *issue fixed*
+- The suggestion list for the users in the messages system doesn't display all the users and displays an user that is deleted already. *issue fixed*
 
-        The usernames were not called within the function. therefor it wasn't working
+        The usernames were not called within the function, therefor it wasn't working.
 
 ## Deployment
 
-This project was made with the Gitpod IDE and github as a remote repository. This project contains secure information therefor an env.py file is used.
+This project was made with the Gitpod IDE and Github as a remote repository. This project contains secure information therefor an env.py file is used.
 
 ### Instructions Making a Local Clone
 
@@ -324,7 +324,7 @@ This project was made with the Gitpod IDE and github as a remote repository. Thi
 2. Above the files click the button for Code.
 3. Copy the link under the HTTPS tab.
 4. Open your code editor.
-5. Open a new work directory, or a existing one where you want the directory to be created.
+5. Open a new work directory, or an existing one where you want the directory to be created.
 6. In the command line write git clone, and after that paste the URL you from Step 3 and hit enter.
 
         git clone https://https://github.com/pjdijxhoorn/Milestone-project-3
@@ -332,7 +332,7 @@ This project was made with the Gitpod IDE and github as a remote repository. Thi
 8. within the terminal type the following to install the required dependencies:
 
         pip3 install -r requirements.txt
-8. Now you want to create a env.py file. with the content below
+8. Now you want to create a env.py file with the content below
 
         import os
 
@@ -342,9 +342,9 @@ This project was made with the Gitpod IDE and github as a remote repository. Thi
         os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>.djxyg.mongodb.net/<database_name>?retryWrites=true&w=majority")
         os.environ.setdefault("MONGO_DBNAME", "<database_name>")
 
-9. make sure that your env.py file is added to .gitignore so your database information is not viewable by others.
+9. Make sure that your env.py file is added to .gitignore so your database information is not viewable by others.
 
-10. your local version is ready to run. activated it by typing the following command into your terminal:
+10. Your local version is ready to run. Activate it by typing the following command into your terminal:
 
         python3 run.py
 
@@ -354,7 +354,7 @@ To deploy to Heroku use the next steps:
 
 1. Sign up or log in to your account on Heroku.
 2. Create a new app with a unused name.
-3. Set the region to be the closets one to you.
+3. Set the region to be the closest one to you.
 4. When you created the app go to the 'Settings' tab and click 'Reveal Config Variables' and input the following values.
 
 | Config Vars | Key | 
@@ -365,9 +365,9 @@ To deploy to Heroku use the next steps:
 | PORT| 5000 | 
 | SECRET_KEY | `<Your secret key>` |  
 
-Note: several values i replaced with a placeholder for security reasons.
+Note: I replaced several values with a placeholder for security reasons.
 
-5. go back toi your IDE. Create a requirements.txt with the following command in your terminal:
+5. Go back to your IDE. Create a requirements.txt with the following command in your terminal:
 
         pip3 freeze --local > requirements.txt
 
@@ -386,16 +386,16 @@ git commit -m " "
 git push
 ```
 
-8. After pushing these files go back to the Heroku deployment tab. and choose for the method Github.
+8. After pushing these files go back to the Heroku deployment tab and choose for the method Github.
 
-9. When prompted type the name of your repo in the box
+9. When prompted, type the name of your repo in the box.
 
-10. click your repo when it appears.
+10. Click your repo when it appears.
 
-11. scroll down to the deploy button and click
+11. Scroll down to the deploy button and click
 'enable automatic deployment'.
 
-12. Click deploy. and enjoy your project.
+12. Click deploy and enjoy your project.
 
 ## Credits
 
@@ -411,13 +411,13 @@ git push
 ### images
 - The hero image was taken from https://www.rawpixel.com/image/414964/cooking-slice-steak 
     it was a free photo made by rob (no other name was given).
-- photo smores recipe by Jessica Ruscello on Unsplash
+- Photo smores recipe by Jessica Ruscello on Unsplash
 
 ### Acknowledgements
 
 - Thanks to my great friends and family for populating the website with users and original recipes.
-- Special thanks to my mentor for being so inspirational and helpfull.
-- unbeknownst to here, Anna greaves has help me out tremendously by here structured Readme https://github.com/AJGreaves/thehouseofmouse
+- Special thanks to my mentor for being so inspirational and helpful.
+- Unbeknownst to here, Anna Greaves has helped me out tremendously by her structured Readme https://github.com/AJGreaves/thehouseofmouse
 
 ## Contact
 
